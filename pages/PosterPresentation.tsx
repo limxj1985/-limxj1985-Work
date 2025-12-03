@@ -90,7 +90,7 @@ const PosterPresentation: React.FC = () => {
            </div>
         </div>
 
-        {/* Awards Section (MOVED UP) */}
+        {/* Awards Section (Moved before Guidelines) */}
         <div className="grid md:grid-cols-1 gap-6 mb-8">
            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-start gap-4">
               <div className="p-3 bg-pink-100 rounded-full text-pink-600">
