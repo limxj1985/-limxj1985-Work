@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE } from '../constants';
-import { Clock, Trophy, Award, Mail, FileText, CheckCircle, Quote, Gavel } from 'lucide-react';
+import { Clock, Trophy, Award, Mail, FileText, CheckCircle, Quote, AlertCircle } from 'lucide-react';
 
 const OralPresentation: React.FC = () => {
   return (
@@ -31,16 +31,16 @@ const OralPresentation: React.FC = () => {
                 </div>
             </div>
 
-            {/* Committee Decision Notice */}
+            {/* Important Reminder Section (New) */}
             <div className="bg-amber-50 border border-amber-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
                 <div className="p-2 bg-amber-100 rounded-full text-amber-600 shrink-0">
-                <Gavel className="w-5 h-5" />
+                  <AlertCircle className="w-5 h-5" />
                 </div>
                 <div>
-                <h3 className="text-amber-900 font-bold mb-1">Committee Decision</h3>
-                <p className="text-amber-800 text-sm leading-relaxed">
-                    The Scientific Committee reserves the right to decide on the acceptance of abstracts for either oral or poster presentation. Any appeal will not be entertained.
-                </p>
+                  <h3 className="text-amber-900 font-bold mb-1">Important Reminder</h3>
+                  <p className="text-amber-800 text-sm leading-relaxed">
+                    All participants are required to submit their work in the form of an abstract. The Scientific Committee will review all submissions and determine whether each accepted abstract will be assigned to an oral or poster presentation.
+                  </p>
                 </div>
             </div>
         </div>
@@ -166,7 +166,7 @@ const OralPresentation: React.FC = () => {
               <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
                  <Quote className="absolute top-4 left-4 w-8 h-8 text-pink-100 -z-0" />
                  <p className="text-sm text-slate-600 italic font-serif relative z-10 leading-relaxed">
-                    "Somewhere, something incredible is waiting to be known."
+                   "Somewhere, something incredible is waiting to be known."
                  </p>
                  <p className="text-xs text-pink-500 font-bold mt-3 text-right">— Dr. Carl Sagan</p>
               </div>
