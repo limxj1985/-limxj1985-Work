@@ -71,7 +71,7 @@ const AbstractSubmission: React.FC = () => {
             </div>
         </div>
 
-        {/* Study Types & Submission Details (Moved Up) */}
+        {/* Study Types & Submission Details */}
         <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-8 mb-8">
             <div className="grid md:grid-cols-2 gap-10">
                  {/* Accepted Study Types */}
@@ -186,7 +186,7 @@ const AbstractSubmission: React.FC = () => {
            </div>
         </div>
 
-        {/* General Guidelines Section */}
+        {/* General Guidelines Section (Standardized with Oral Presentation Page) */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
            
            <div className="bg-slate-800 p-6">
@@ -196,107 +196,84 @@ const AbstractSubmission: React.FC = () => {
               </h2>
            </div>
 
-           <div className="p-8 space-y-8">
+           <div className="p-8">
               
-              {/* Publication Rights */}
-              <div className="flex gap-4 items-start">
-                 <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
-                    <FileCheck className="w-5 h-5" />
-                 </div>
-                 <div>
-                    <h3 className="font-bold text-slate-800 text-lg mb-2">Publication Rights</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">
-                       By submitting an abstract, you grant us permission to publish it in print, electronic, and digital formats (including the PRC website) if it is accepted for oral or poster presentation.
-                    </p>
-                 </div>
-              </div>
-
-              {/* Originality */}
-              <div className="flex gap-4 items-start">
-                 <div className="mt-1 bg-pink-100 p-2 rounded-lg text-pink-700">
-                    <ShieldCheck className="w-5 h-5" />
-                 </div>
-                 <div>
-                    <h3 className="font-bold text-slate-800 text-lg mb-2">Originality & Accuracy</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">
-                       Abstracts must be of original research. The author is responsible for the accuracy of the abstract content.
-                    </p>
-                 </div>
-              </div>
-
-              {/* Authorship */}
-              <div className="flex gap-4 items-start">
-                 <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
-                    <Users className="w-5 h-5" />
-                 </div>
-                 <div>
-                    <h3 className="font-bold text-slate-800 text-lg mb-2">Authorship & Approval</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">
-                       The corresponding author should ensure that all appropriate co-authors are included and that the submission has been approved by all authors.
-                    </p>
-                 </div>
-              </div>
-
-              {/* COI (Refactored to match design) */}
-              <div className="flex gap-4 items-start">
-                 <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-700">
-                    <AlertCircle className="w-5 h-5" />
-                 </div>
-                 <div>
-                    <h3 className="font-bold text-slate-800 text-lg mb-2">Conflict of Interest & Funding</h3>
-                    <p className="text-slate-600 text-sm mb-2">
-                       Commercial interests or associations that might pose a conflict of interest must be declared.
-                    </p>
-                    <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
-                       <li><strong>If accepted:</strong> Declaration must be made on the title slide (Oral) or at the bottom of the poster (Poster).</li>
-                       <li>Poster presentations should include funding and other acknowledgments where applicable.</li>
-                    </ul>
-                 </div>
-              </div>
-
-              {/* Photography (Refactored to match design) */}
-              <div className="flex gap-4 items-start">
-                 <div className="mt-1 bg-blue-100 p-2 rounded-lg text-blue-700">
-                    <Camera className="w-5 h-5" />
-                 </div>
-                 <div>
-                    <h3 className="font-bold text-slate-800 text-lg mb-2">Photography Permission</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                       You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
-                    </p>
-                 </div>
-              </div>
-
-              <hr className="border-slate-100" />
-
-              {/* Registration Rule */}
-              <div className="bg-pink-50 rounded-xl p-6 border border-pink-100">
-                 <div className="flex gap-4 items-start">
-                    <div className="mt-1 text-pink-600">
-                       <AlertCircle className="w-6 h-6" />
-                    </div>
-                    <div>
-                       <h3 className="font-bold text-pink-900 text-lg mb-2">Mandatory Registration</h3>
-                       <p className="text-pink-800 leading-relaxed text-sm mb-3">
-                          The presenting author <strong>MUST register</strong> for the conference and attend as a delegate. If none of the authors is registered for the conference, the abstract will be withdrawn.
-                       </p>
-                       <p className="text-pink-800 leading-relaxed text-sm">
-                          Authors must immediately notify the PRC secretariat if they are unable to present or if the presenting author changes.
-                       </p>
-                    </div>
-                 </div>
-              </div>
-
-              {/* Disclaimer */}
-              <div className="flex gap-4 items-start bg-slate-50 p-4 rounded-lg">
-                 <div className="mt-1 text-slate-500">
-                    <Gavel className="w-5 h-5" />
-                 </div>
-                 <p className="text-slate-600 text-sm">
-                    The Scientific Committee reserves the right to decide on the acceptance of abstracts for either oral or poster presentation. <strong>Any appeal will not be entertained.</strong>
+              {/* The Highlighted Agreement Statement (Standardized) */}
+              <div className="bg-lime-50 border-l-4 border-lime-500 p-4 rounded-r-xl mb-8">
+                 <p className="text-slate-700 text-sm font-medium italic leading-relaxed">
+                    By submitting an abstract, you grant us permission to publish it in print, electronic, and digital formats (including the PRC website) if it is accepted for oral or poster presentation.
                  </p>
               </div>
 
+              <div className="space-y-6">
+
+                  {/* Originality */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-blue-100 p-2 rounded-lg text-blue-700">
+                        <ShieldCheck className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 leading-relaxed text-sm">
+                        Abstracts must be of original research. The author is responsible for the accuracy of the abstract content.
+                     </p>
+                  </div>
+
+                  {/* Authorship */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                        <Users className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 leading-relaxed text-sm">
+                        The corresponding author should ensure that all appropriate co-authors are included and that the submission has been approved by all authors.
+                     </p>
+                  </div>
+
+                  {/* Mandatory Registration (Pink Warning) */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-pink-100 p-2 rounded-lg text-pink-600">
+                        <AlertCircle className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 text-sm leading-relaxed">
+                        The presenting author <strong>MUST register</strong> for the conference and attend as a delegate. If none of the authors is registered for the conference, the abstract will be withdrawn. Authors must immediately notify the PRC secretariat if they are unable to present or if the presenting author changes.
+                     </p>
+                  </div>
+
+                  {/* Conflict of Interest (Amber Warning) */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-600">
+                        <AlertCircle className="w-5 h-5" />
+                     </div>
+                     <div>
+                        <p className="text-slate-600 text-sm mb-1">
+                           Commercial interests or associations that might pose a conflict of interest must be declared.
+                        </p>
+                        <ul className="list-disc list-inside text-sm text-slate-600 space-y-1 ml-1">
+                           <li><strong>If accepted:</strong> Declaration must be made on the title slide (Oral) or at the bottom of the poster (Poster).</li>
+                           <li>Poster presentations should include funding and other acknowledgments where applicable.</li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  {/* Photography Permission */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                        <Camera className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 text-sm leading-relaxed">
+                        You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
+                     </p>
+                  </div>
+
+                  {/* Disclaimer */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-slate-100 p-2 rounded-lg text-slate-600">
+                        <Gavel className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 text-sm">
+                        The Scientific Committee reserves the right to decide on the acceptance of abstracts for either oral or poster presentation. <strong>Any appeal will not be entertained.</strong>
+                     </p>
+                  </div>
+
+              </div>
            </div>
         </div>
 
