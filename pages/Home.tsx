@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Users, Clock, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NetworkBackground from '../components/NetworkBackground';
-import { CONFERENCE_DATE, CONFERENCE_VENUE, REGISTRATION_LINK } from '../constants';
+import { CONFERENCE_DATE, REGISTRATION_LINK } from '../constants';
 
 // Images for rotating carousel
 const ROTATING_IMAGES = [
@@ -84,7 +84,12 @@ const Home: React.FC = () => {
                 <MapPin className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-2">Venue</h3>
-              <p className="text-slate-600 text-sm max-w-xs">{CONFERENCE_VENUE}</p>
+              <p className="text-slate-600 text-sm max-w-xs">
+                Auditorium, Level 4,<br/>
+                Ambulatory Care Centre,<br/>
+                Hospital Raja Permaisuri Bainun,<br/>
+                Ipoh, Perak
+              </p>
             </div>
 
             {/* Card 3 - Important Deadlines */}
@@ -165,19 +170,19 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Location Map Section - ADDED */}
+      {/* Location Map Section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Event Location</h2>
-            <p className="text-slate-600 flex items-center justify-center gap-2">
-              <MapPin className="w-5 h-5 text-pink-500" />
-              {CONFERENCE_VENUE}
+            <p className="text-slate-600 flex flex-col md:flex-row items-center justify-center gap-2 text-center">
+              <span className="inline-flex items-center gap-1"><MapPin className="w-5 h-5 text-pink-500" /> Auditorium, Level 4,</span>
+              <span>Ambulatory Care Centre, HRPB, Ipoh</span>
             </p>
           </div>
           <div className="w-full h-96 rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-200">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.223072230232!2d101.0792373147614!3d4.667926996610086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec77030e6693%3A0x6c6e75294527926!2sCasuarina%20Convention%20Centre!5e0!3m2!1sen!2smy!4v1625627280000!5m2!1sen!2smy" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.885662706859!2d101.08947631538356!3d4.603411043685519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec830e017681%3A0x629158025287518!2sHospital%20Raja%20Permaisuri%20Bainun!5e0!3m2!1sen!2smy!4v1629876543210!5m2!1sen!2smy" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
