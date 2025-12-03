@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Users, Clock, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NetworkBackground from '../components/NetworkBackground';
 import { CONFERENCE_DATE, CONFERENCE_VENUE, REGISTRATION_LINK } from '../constants';
 
+// Images for rotating carousel
+const ROTATING_IMAGES = [
+  'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80', // Lab research
+  'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80', // Data/Network nodes
+  'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80', // Scientists collaborating
+];
+
 const Home: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Logic to rotate images every 4 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % ROTATING_IMAGES.length);
+    }, 4000); // Change image every 4000ms (4 seconds)
+
+    return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       
@@ -91,7 +109,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section (with Rotating Images) */}
       <section className="py-20 bg-slate-50">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -114,14 +132,23 @@ const Home: React.FC = () => {
                      ))}
                   </ul>
                </div>
-               <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-pink-200 to-lime-200 rounded-2xl transform rotate-3"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" 
-                    alt="Medical Research Laboratory" 
-                    className="relative rounded-2xl shadow-lg w-full h-auto object-cover hover:scale-[1.02] transition-all duration-500"
-                  />
+               
+               {/* Rotating Image Container */}
+               <div className="relative h-96">
+                 <div className="absolute inset-0 bg-gradient-to-tr from-pink-200 to-lime-200 rounded-2xl transform rotate-3"></div>
+                 
+                 {ROTATING_IMAGES.map((imageUrl, index) => (
+                   <img 
+                     key={index}
+                     src={imageUrl} 
+                     alt={`Conference Topic ${index + 1}`} 
+                     className={`absolute inset-0 rounded-2xl shadow-lg w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000 ease-in-out ${
+                       index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                     }`}
+                   />
+                 ))}
                </div>
+
             </div>
          </div>
       </section>
