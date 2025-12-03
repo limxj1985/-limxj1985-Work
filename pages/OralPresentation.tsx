@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE } from '../constants';
-import { Clock, Trophy, Award, Mail, FileText, CheckCircle, Quote, AlertCircle } from 'lucide-react';
+import { Clock, Trophy, Award, Mail, FileText, CheckCircle, Quote, AlertCircle, FileCheck, ShieldCheck, Users, Camera, Gavel } from 'lucide-react';
 
 const OralPresentation: React.FC = () => {
   return (
@@ -31,7 +31,7 @@ const OralPresentation: React.FC = () => {
                 </div>
             </div>
 
-            {/* Important Reminder Section (New) */}
+            {/* Important Reminder Section */}
             <div className="bg-amber-50 border border-amber-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
                 <div className="p-2 bg-amber-100 rounded-full text-amber-600 shrink-0">
                   <AlertCircle className="w-5 h-5" />
@@ -97,46 +97,96 @@ const OralPresentation: React.FC = () => {
                  </div>
               </section>
 
-              {/* Terms and Conditions */}
+              {/* Terms and Conditions (Standardized) */}
               <section>
                  <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
                     <FileText className="w-6 h-6 text-lime-600" />
                     Terms and Conditions
                  </h2>
+                 
                  <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <p className="text-slate-600 mb-6 text-sm italic border-l-4 border-lime-500 pl-4 bg-lime-50 py-2 rounded-r-lg">
-                       By submitting the oral presentation, you have agreed to the terms and conditions as set out below.
-                    </p>
-                    <ul className="space-y-4 text-sm text-slate-600">
-                       <li className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-lime-500 mt-1 flex-shrink-0" />
-                          <span className="leading-relaxed">You agree to give us permission on behalf of all authors and/or co-authors to display and store the abstract (submitted text only), together with author names, and biographies where supplied in different formats including print, electronic and digital forms (including on the PRC webpage).</span>
-                       </li>
-                       <li className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-lime-500 mt-1 flex-shrink-0" />
-                          <span className="leading-relaxed">The author is responsible for the accuracy of the abstract and oral presentation and should ensure that they have written entirely original work which does not infringe any copyright.</span>
-                       </li>
-                       <li className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-lime-500 mt-1 flex-shrink-0" />
-                          <span className="leading-relaxed">The corresponding author should ensure that all appropriate co-authors are included in the abstract and that the submission has been approved by all authors.</span>
-                       </li>
-                       <li className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-lime-500 mt-1 flex-shrink-0" />
-                          <span className="leading-relaxed">Presenting authors for oral presentations must register and attend the conference as a delegate or the abstract will be withdrawn. The authors will immediately notify the PRC organizing committee if they are unable to present an abstract or if the presenting author is changed.</span>
-                       </li>
-                       <li className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-lime-500 mt-1 flex-shrink-0" />
-                          <span className="leading-relaxed">If the author(s) have any commercial interest or associations that might pose a conflict of interest regarding their submission, they must be declared on the title slide.</span>
-                       </li>
-                       <li className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-lime-500 mt-1 flex-shrink-0" />
-                          <span className="leading-relaxed">You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.</span>
-                       </li>
-                       <li className="flex gap-3 items-start">
-                          <CheckCircle className="w-4 h-4 text-lime-500 mt-1 flex-shrink-0" />
-                          <span className="leading-relaxed">The decision of the judges for oral presentations is final and any appeal will not be entertained.</span>
-                       </li>
-                    </ul>
+                    
+                    {/* The Highlighted Agreement Statement */}
+                    <div className="bg-lime-50 border-l-4 border-lime-500 p-4 rounded-r-xl mb-8">
+                       <p className="text-slate-700 text-sm font-medium italic leading-relaxed">
+                          By submitting the oral presentation, you have agreed to the terms and conditions as set out below.
+                       </p>
+                    </div>
+
+                    {/* Standardized List Items */}
+                    <div className="space-y-6">
+                        
+                        {/* Permission */}
+                        <div className="flex gap-4 items-start">
+                           <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                              <FileCheck className="w-5 h-5" />
+                           </div>
+                           <p className="text-slate-600 text-sm leading-relaxed">
+                              You agree to give us permission on behalf of all authors and/or co-authors to display and store the abstract (submitted text only), together with author names, and biographies where supplied in different formats including print, electronic and digital forms (including on the PRC webpage).
+                           </p>
+                        </div>
+
+                        {/* Accuracy */}
+                        <div className="flex gap-4 items-start">
+                           <div className="mt-1 bg-blue-100 p-2 rounded-lg text-blue-700">
+                              <ShieldCheck className="w-5 h-5" />
+                           </div>
+                           <p className="text-slate-600 text-sm leading-relaxed">
+                              The author is responsible for the accuracy of the abstract and oral presentation and should ensure that they have written entirely original work which does not infringe any copyright.
+                           </p>
+                        </div>
+
+                        {/* Co-Authors */}
+                        <div className="flex gap-4 items-start">
+                           <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                              <Users className="w-5 h-5" />
+                           </div>
+                           <p className="text-slate-600 text-sm leading-relaxed">
+                              The corresponding author should ensure that all appropriate co-authors are included in the abstract and that the submission has been approved by all authors.
+                           </p>
+                        </div>
+
+                        {/* Registration (Pink Warning) */}
+                        <div className="flex gap-4 items-start">
+                           <div className="mt-1 bg-pink-100 p-2 rounded-lg text-pink-600">
+                              <AlertCircle className="w-5 h-5" />
+                           </div>
+                           <p className="text-slate-600 text-sm leading-relaxed">
+                              Presenting authors for oral presentations <strong>must register and attend</strong> the conference as a delegate or the abstract will be withdrawn. The authors will immediately notify the PRC organizing committee if they are unable to present an abstract or if the presenting author is changed.
+                           </p>
+                        </div>
+
+                        {/* Conflict of Interest (Amber Warning) */}
+                        <div className="flex gap-4 items-start">
+                           <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-600">
+                              <AlertCircle className="w-5 h-5" />
+                           </div>
+                           <p className="text-slate-600 text-sm leading-relaxed">
+                              If the author(s) have any commercial interest or associations that might pose a conflict of interest regarding their submission, they must be declared on the title slide.
+                           </p>
+                        </div>
+
+                        {/* Photography */}
+                        <div className="flex gap-4 items-start">
+                           <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                              <Camera className="w-5 h-5" />
+                           </div>
+                           <p className="text-slate-600 text-sm leading-relaxed">
+                              You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
+                           </p>
+                        </div>
+
+                        {/* Final Decision */}
+                        <div className="flex gap-4 items-start">
+                           <div className="mt-1 bg-slate-100 p-2 rounded-lg text-slate-600">
+                              <Gavel className="w-5 h-5" />
+                           </div>
+                           <p className="text-slate-600 text-sm leading-relaxed">
+                              The decision of the judges for oral presentations is final and any appeal will not be entertained.
+                           </p>
+                        </div>
+
+                    </div>
                  </div>
               </section>
            </div>
