@@ -117,6 +117,5 @@ const PosterPresentation: React.FC = () => {
 };
 
 export default PosterPresentation;
-};
 
-export default PosterPresentation;
+
