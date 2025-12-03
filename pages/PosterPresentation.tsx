@@ -7,15 +7,16 @@ const PosterPresentation: React.FC = () => {
     <div className="min-h-screen bg-slate-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Header - Mobile optimized title size */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Poster Presentation Guidelines</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Poster Presentation Guidelines</h1>
           <p className="text-lg text-slate-600">Showcase your research visually to a wider audience.</p>
         </div>
 
         {/* Notices Section (Grouped for consistent spacing) */}
         <div className="space-y-4 mb-10">
             
-            {/* Communication Notice (Added) */}
+            {/* Communication Notice */}
             <div className="bg-blue-50 border border-blue-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
                 <div className="p-2 bg-blue-100 rounded-full text-blue-600 shrink-0">
                    <Mail className="w-5 h-5" />
@@ -28,7 +29,7 @@ const PosterPresentation: React.FC = () => {
                 </div>
             </div>
 
-            {/* Important Reminder Section - UPDATED */}
+            {/* Important Reminder Section */}
             <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl shadow-sm flex items-start gap-4">
                 <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                 <div>
@@ -52,7 +53,8 @@ const PosterPresentation: React.FC = () => {
 
         {/* E-Poster Specs Section */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
-           <div className="bg-gradient-to-r from-lime-500 to-green-600 p-8 text-white flex justify-between items-center">
+           {/* Mobile optimized banner: stacked flex-col on mobile, row on desktop */}
+           <div className="bg-gradient-to-r from-lime-500 to-green-600 p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 text-center md:text-left">
               <div>
                  <h2 className="text-2xl font-bold">E-Poster Presentation</h2>
                  <p className="opacity-90">Digital Format Only - Guidelines and Specifications</p>
@@ -67,7 +69,8 @@ const PosterPresentation: React.FC = () => {
                       href={POSTER_TEMPLATE_LINK}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-3 bg-white border-2 border-lime-100 text-lime-700 rounded-lg font-bold shadow-sm hover:bg-lime-50 hover:border-lime-300 transition-all"
+                      // Mobile optimized button: w-full and justify-center
+                      className="inline-flex items-center justify-center w-full md:w-auto gap-2 px-5 py-3 bg-white border-2 border-lime-100 text-lime-700 rounded-lg font-bold shadow-sm hover:bg-lime-50 hover:border-lime-300 transition-all"
                     >
                       <Download className="w-5 h-5" />
                       Download Template Slide
@@ -120,13 +123,18 @@ const PosterPresentation: React.FC = () => {
         {/* Awards Section */}
         <div className="grid md:grid-cols-1 gap-6 mb-8">
            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-start gap-4">
-              <div className="p-3 bg-pink-100 rounded-full text-pink-600">
+              <div className="p-3 bg-pink-100 rounded-full text-pink-600 shrink-0">
                  <Award className="w-6 h-6" />
               </div>
               <div>
                  <h3 className="font-bold text-slate-800 text-lg">Best Poster Awards</h3>
-                 <p className="text-slate-600 text-sm mt-1">
+                 <p className="text-slate-600 text-sm mt-1 mb-3">
                     There will be <span className="font-bold text-pink-600">3 Prizes</span> for poster presentations.
+                 </p>
+                 
+                 {/* Disclaimer Added Here */}
+                 <p className="text-xs text-slate-400 italic border-t border-slate-100 pt-2">
+                    * Subject to change by the organizer without prior notice.
                  </p>
               </div>
            </div>
