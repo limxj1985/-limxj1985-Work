@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE } from '../constants';
-import { Clock, Trophy, Award, Mail, FileText, CheckCircle, Quote } from 'lucide-react';
+import { Clock, Trophy, Award, Mail, FileText, CheckCircle, Quote, Gavel } from 'lucide-react';
 
 const OralPresentation: React.FC = () => {
   return (
@@ -16,16 +16,32 @@ const OralPresentation: React.FC = () => {
           </div>
         </div>
 
-        {/* Communication Notice */}
-        <div className="bg-blue-50 border border-blue-100 p-6 rounded-xl mb-10 flex items-start gap-4 shadow-sm">
-            <div className="p-2 bg-blue-100 rounded-full text-blue-600 shrink-0">
-               <Mail className="w-5 h-5" />
+        {/* Notices Section */}
+        <div className="space-y-4 mb-10">
+            {/* Communication Notice */}
+            <div className="bg-blue-50 border border-blue-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
+                <div className="p-2 bg-blue-100 rounded-full text-blue-600 shrink-0">
+                <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                <h3 className="text-blue-900 font-bold mb-1">Communication</h3>
+                <p className="text-blue-800 text-sm leading-relaxed">
+                    All necessary information—including the acceptance decision, technical guidelines, and presentation logistics—will be communicated to authors via email.
+                </p>
+                </div>
             </div>
-            <div>
-               <h3 className="text-blue-900 font-bold mb-1">Communication</h3>
-               <p className="text-blue-800 text-sm leading-relaxed">
-                  All necessary information—including the acceptance decision, technical guidelines, and presentation logistics—will be communicated to authors via email.
-               </p>
+
+            {/* Committee Decision Notice */}
+            <div className="bg-amber-50 border border-amber-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
+                <div className="p-2 bg-amber-100 rounded-full text-amber-600 shrink-0">
+                <Gavel className="w-5 h-5" />
+                </div>
+                <div>
+                <h3 className="text-amber-900 font-bold mb-1">Committee Decision</h3>
+                <p className="text-amber-800 text-sm leading-relaxed">
+                    The Scientific Committee reserves the right to decide on the acceptance of abstracts for either oral or poster presentation. Any appeal will not be entertained.
+                </p>
+                </div>
             </div>
         </div>
 
