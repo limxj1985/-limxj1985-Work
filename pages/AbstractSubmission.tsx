@@ -186,7 +186,7 @@ const AbstractSubmission: React.FC = () => {
            </div>
         </div>
 
-        {/* General Guidelines Section (Standardized with Oral Presentation Page) */}
+        {/* General Guidelines Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
            
            <div className="bg-slate-800 p-6">
@@ -198,14 +198,24 @@ const AbstractSubmission: React.FC = () => {
 
            <div className="p-8">
               
-              {/* The Highlighted Agreement Statement (Standardized) */}
+              {/* Highlighted Agreement Statement (UPDATED) */}
               <div className="bg-lime-50 border-l-4 border-lime-500 p-4 rounded-r-xl mb-8">
                  <p className="text-slate-700 text-sm font-medium italic leading-relaxed">
-                    By submitting an abstract, you grant us permission to publish it in print, electronic, and digital formats (including the PRC website) if it is accepted for oral or poster presentation.
+                    By submitting the abstract, you have agreed to the terms and conditions as set out below.
                  </p>
               </div>
 
               <div className="space-y-6">
+
+                  {/* Publication Permission (MOVED HERE) */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                        <FileCheck className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 leading-relaxed text-sm">
+                        By submitting an abstract, you grant us permission to publish it in print, electronic, and digital formats (including the PRC website) if it is accepted for oral or poster presentation.
+                     </p>
+                  </div>
 
                   {/* Originality */}
                   <div className="flex gap-4 items-start">
