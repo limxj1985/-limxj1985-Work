@@ -9,8 +9,8 @@ const OralPresentation: React.FC = () => {
         
         {/* Header */}
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Oral Presentation Guidelines</h1>
-         </div>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Oral Presentation Guidelines</h1>
+        </div>
 
         {/* Notices Section */}
         <div className="space-y-4 mb-10">
@@ -27,7 +27,7 @@ const OralPresentation: React.FC = () => {
                 </div>
             </div>
 
-            {/* Important Reminder Section - UPDATED */}
+            {/* Important Reminder Section */}
             <div className="bg-amber-50 border border-amber-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
                 <div className="p-2 bg-amber-100 rounded-full text-amber-600 shrink-0">
                   <AlertCircle className="w-5 h-5" />
@@ -99,6 +99,13 @@ const OralPresentation: React.FC = () => {
                            <span className="font-bold text-slate-800">1 Prize for Best Case Report</span>
                         </li>
                     </ul>
+                    
+                    {/* Disclaimer Added Here */}
+                    <div className="mt-6 pt-4 border-t border-pink-100">
+                        <p className="text-xs text-slate-400 italic">
+                            * Subject to change by the organizer without prior notice.
+                        </p>
+                    </div>
                  </div>
               </section>
 
