@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_SUBMISSION_LINK, CONTACT_EMAIL, ABSTRACT_TEMPLATE_LINK } from '../constants';
-import { FileText, ShieldCheck, Users, AlertCircle, Camera, Gavel, FileCheck, Send, Calendar, Mail, FileDown, Type, AlignLeft, Quote } from 'lucide-react';
+import { FileText, ShieldCheck, Users, AlertCircle, Camera, Gavel, FileCheck, Send, Calendar, Mail, FileDown, Type, AlignLeft, Quote, ListChecks, Info } from 'lucide-react';
 
 const AbstractSubmission: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const AbstractSubmission: React.FC = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Abstract Submission</h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-             Submit your research for a chance to present at PRC 2026. Please review the specific formatting rules and templates below.
+              Submit your research for a chance to present at PRC 2026. Please review the specific formatting rules and templates below.
           </p>
         </div>
 
@@ -18,7 +18,7 @@ const AbstractSubmission: React.FC = () => {
         <div className="bg-gradient-to-r from-lime-50 to-pink-50 p-6 rounded-xl border border-lime-100 mb-8 text-center shadow-sm">
            <Quote className="w-6 h-6 text-lime-500 mx-auto mb-2 opacity-50" />
            <p className="text-slate-700 italic font-serif text-lg leading-relaxed">
-              "Science knows no country, because knowledge belongs to humanity, and is the torch which illuminates the world."
+             "Science knows no country, because knowledge belongs to humanity, and is the torch which illuminates the world."
            </p>
            <p className="text-xs font-bold text-pink-500 mt-2 uppercase tracking-wide">— Louis Pasteur</p>
         </div>
@@ -68,6 +68,46 @@ const AbstractSubmission: React.FC = () => {
                     </p>
                   </div>
                </div>
+            </div>
+        </div>
+
+        {/* Study Types & Submission Details (Moved Up) */}
+        <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-8 mb-8">
+            <div className="grid md:grid-cols-2 gap-10">
+                 {/* Accepted Study Types */}
+                 <div>
+                    <div className="flex items-center gap-2 mb-4">
+                        <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                            <ListChecks className="w-5 h-5" />
+                        </div>
+                        <h4 className="font-bold text-slate-800 text-lg">Accepted Study Types</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-3">All clinical studies will be considered, including:</p>
+                    <ul className="space-y-2 text-sm text-slate-600 list-disc list-outside ml-4">
+                       <li>Observational or Interventional studies</li>
+                       <li>Cross-sectional surveys</li>
+                       <li>Case series / Case reports</li>
+                       <li>Quality Assurance (QA) studies</li>
+                       <li>Clinical audits</li>
+                    </ul>
+                 </div>
+
+                 {/* Submission Details */}
+                 <div>
+                    <div className="flex items-center gap-2 mb-4">
+                        <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+                            <Info className="w-5 h-5" />
+                        </div>
+                        <h4 className="font-bold text-slate-800 text-lg">Submission Details</h4>
+                    </div>
+                    <ul className="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                       <li>Participants may submit more than ONE abstract.</li>
+                       <li>Abstracts must be in <strong>ENGLISH</strong>.</li>
+                       <li>
+                          <strong>NMRR ID Requirement:</strong> All abstracts must include an NMRR ID (or equivalent ethical approval ID for non-MOH studies). This is compulsory.
+                       </li>
+                    </ul>
+                 </div>
             </div>
         </div>
 
@@ -146,6 +186,7 @@ const AbstractSubmission: React.FC = () => {
            </div>
         </div>
 
+        {/* General Guidelines Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
            
            <div className="bg-slate-800 p-6">
@@ -157,7 +198,7 @@ const AbstractSubmission: React.FC = () => {
 
            <div className="p-8 space-y-8">
               
-              {/* Submission Rights */}
+              {/* Publication Rights */}
               <div className="flex gap-4 items-start">
                  <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
                     <FileCheck className="w-5 h-5" />
@@ -196,6 +237,38 @@ const AbstractSubmission: React.FC = () => {
                  </div>
               </div>
 
+              {/* COI (Refactored to match design) */}
+              <div className="flex gap-4 items-start">
+                 <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-700">
+                    <AlertCircle className="w-5 h-5" />
+                 </div>
+                 <div>
+                    <h3 className="font-bold text-slate-800 text-lg mb-2">Conflict of Interest & Funding</h3>
+                    <p className="text-slate-600 text-sm mb-2">
+                       Commercial interests or associations that might pose a conflict of interest must be declared.
+                    </p>
+                    <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
+                       <li><strong>If accepted:</strong> Declaration must be made on the title slide (Oral) or at the bottom of the poster (Poster).</li>
+                       <li>Poster presentations should include funding and other acknowledgments where applicable.</li>
+                    </ul>
+                 </div>
+              </div>
+
+              {/* Photography (Refactored to match design) */}
+              <div className="flex gap-4 items-start">
+                 <div className="mt-1 bg-blue-100 p-2 rounded-lg text-blue-700">
+                    <Camera className="w-5 h-5" />
+                 </div>
+                 <div>
+                    <h3 className="font-bold text-slate-800 text-lg mb-2">Photography Permission</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                       You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
+                    </p>
+                 </div>
+              </div>
+
+              <hr className="border-slate-100" />
+
               {/* Registration Rule */}
               <div className="bg-pink-50 rounded-xl p-6 border border-pink-100">
                  <div className="flex gap-4 items-start">
@@ -212,57 +285,6 @@ const AbstractSubmission: React.FC = () => {
                        </p>
                     </div>
                  </div>
-              </div>
-
-              <hr className="border-slate-100" />
-
-              {/* Technical Details */}
-              <div className="grid md:grid-cols-2 gap-8">
-                 <div>
-                    <h4 className="font-bold text-slate-800 mb-3">Submission Details</h4>
-                    <ul className="space-y-2 text-sm text-slate-600 list-disc list-outside ml-4">
-                       <li>Participants may submit more than ONE abstract.</li>
-                       <li>Abstracts must be in <strong>ENGLISH</strong>.</li>
-                       <li>
-                          <strong>NMRR ID Requirement:</strong> All abstracts must include an NMRR ID (or equivalent ethical approval ID for non-MOH studies). This is compulsory.
-                       </li>
-                    </ul>
-                 </div>
-                 <div>
-                    <h4 className="font-bold text-slate-800 mb-3">Accepted Study Types</h4>
-                    <p className="text-sm text-slate-600 mb-2">All clinical studies will be considered, including:</p>
-                    <ul className="space-y-1 text-sm text-slate-600 list-disc list-outside ml-4">
-                       <li>Observational or Interventional studies</li>
-                       <li>Cross-sectional surveys</li>
-                       <li>Case series / Case reports</li>
-                       <li>Quality Assurance (QA) studies</li>
-                       <li>Clinical audits</li>
-                    </ul>
-                 </div>
-              </div>
-
-              <hr className="border-slate-100" />
-
-              {/* COI */}
-              <div>
-                 <h3 className="font-bold text-slate-800 text-lg mb-2">Conflict of Interest & Funding</h3>
-                 <p className="text-slate-600 text-sm mb-2">
-                    Commercial interests or associations that might pose a conflict of interest must be declared.
-                 </p>
-                 <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
-                    <li><strong>If accepted:</strong> Declaration must be made on the title slide (Oral) or at the bottom of the poster (Poster).</li>
-                    <li>Poster presentations should include funding and other acknowledgments where applicable.</li>
-                 </ul>
-              </div>
-
-              {/* Photography */}
-              <div className="flex gap-4 items-start bg-slate-50 p-4 rounded-lg">
-                 <div className="mt-1 text-slate-500">
-                    <Camera className="w-5 h-5" />
-                 </div>
-                 <p className="text-slate-600 text-sm">
-                    <strong>Photography Permission:</strong> You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
-                 </p>
               </div>
 
               {/* Disclaimer */}
