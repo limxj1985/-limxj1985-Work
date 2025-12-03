@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Users, BrainCircuit, ArrowRight, Quote } from 'lucide-react';
+import { Calendar, MapPin, Users, Clock, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NetworkBackground from '../components/NetworkBackground';
 import { CONFERENCE_DATE, CONFERENCE_VENUE, REGISTRATION_LINK } from '../constants';
@@ -18,13 +18,13 @@ const Home: React.FC = () => {
             Registration Open Now
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-8">
             Perak Annual Medical <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-green-500">Research Conference</span> 
             <span className="text-pink-500"> 2026</span>
           </h1>
           
-          <p className="max-w-2xl mx-auto text-xl text-slate-600 mb-8 font-medium">
+          <p className="max-w-4xl mx-auto text-2xl md:text-3xl text-slate-800 mb-10 font-bold leading-snug drop-shadow-sm">
             "Connecting Minds: Empowering Clinical Research Through Collaborative Networks"
           </p>
 
@@ -70,13 +70,22 @@ const Home: React.FC = () => {
               <p className="text-slate-600 text-sm max-w-xs">{CONFERENCE_VENUE}</p>
             </div>
 
-            {/* Card 3 */}
+            {/* Card 3 - Replaced Theme with Important Dates */}
             <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col items-center text-center group hover:border-lime-300 transition-all">
               <div className="w-14 h-14 bg-lime-100 rounded-full flex items-center justify-center text-lime-600 mb-4 group-hover:bg-lime-500 group-hover:text-white transition-colors">
-                <BrainCircuit className="w-7 h-7" />
+                <Clock className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Theme</h3>
-              <p className="text-slate-600 text-sm">Empowering Clinical Research Through Collaborative Networks</p>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Important Deadlines</h3>
+              <ul className="text-slate-600 text-sm space-y-2">
+                <li className="flex flex-col">
+                  <span className="font-semibold text-pink-500 uppercase text-xs tracking-wider">Abstract Submission</span>
+                  <span>12 June 2026</span>
+                </li>
+                <li className="flex flex-col">
+                  <span className="font-semibold text-lime-600 uppercase text-xs tracking-wider">Registration Close</span>
+                  <span>21 August 2026</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
