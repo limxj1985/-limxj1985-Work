@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Users, Clock, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import NetworkBackground from '../components/NetworkBackground';
 import { CONFERENCE_DATE, REGISTRATION_LINK } from '../constants';
 
 // Images for rotating carousel
@@ -26,8 +25,12 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-lime-50 via-white to-pink-50 py-20 lg:py-32 overflow-hidden">
-        <NetworkBackground />
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          alt="Hero Background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
+        />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-lime-200 shadow-sm text-lime-700 text-sm font-semibold mb-6 animate-fade-in-up">
