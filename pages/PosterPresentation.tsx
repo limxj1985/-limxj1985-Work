@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE, POSTER_TEMPLATE_LINK } from '../constants';
-import { MonitorPlay, Layout, Award, Download, Quote, AlertCircle } from 'lucide-react';
+import { MonitorPlay, Layout, Award, Download, Quote, AlertCircle, FileText, FileCheck, ShieldCheck, Users, Camera, Gavel } from 'lucide-react';
 
 const PosterPresentation: React.FC = () => {
   return (
@@ -23,6 +23,7 @@ const PosterPresentation: React.FC = () => {
             </div>
         </div>
 
+        {/* E-Poster Specs Section */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
            <div className="bg-gradient-to-r from-lime-500 to-green-600 p-8 text-white flex justify-between items-center">
               <div>
@@ -89,6 +90,86 @@ const PosterPresentation: React.FC = () => {
            </div>
         </div>
 
+        {/* General Guidelines Section (Standardized) */}
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-8">
+           
+           <div className="bg-slate-800 p-6">
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                 <FileText className="w-6 h-6 text-lime-400" />
+                 General Guidelines
+              </h2>
+           </div>
+
+           <div className="p-8">
+              
+              {/* Highlighted Agreement Statement */}
+              <div className="bg-lime-50 border-l-4 border-lime-500 p-4 rounded-r-xl mb-8">
+                 <p className="text-slate-700 text-sm font-medium italic leading-relaxed">
+                    By submitting a poster, you grant us permission to publish it in print, electronic, and digital formats (including the PRC website).
+                 </p>
+              </div>
+
+              <div className="space-y-6">
+
+                  {/* Authorship */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                        <Users className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 leading-relaxed text-sm">
+                        The corresponding author should ensure that all appropriate co-authors are included and that the submission has been approved by all authors.
+                     </p>
+                  </div>
+
+                  {/* Originality */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-blue-100 p-2 rounded-lg text-blue-700">
+                        <ShieldCheck className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 leading-relaxed text-sm">
+                        Posters must be of original research. The author is responsible for the accuracy of the poster content.
+                     </p>
+                  </div>
+
+                  {/* Mandatory Registration (Pink Warning) */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-pink-100 p-2 rounded-lg text-pink-600">
+                        <AlertCircle className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 text-sm leading-relaxed">
+                        The presenting author <strong>MUST register</strong> for the conference. If not registered, the poster will be withdrawn. Authors must immediately notify the PRC secretariat if they are unable to present.
+                     </p>
+                  </div>
+
+                  {/* Conflict of Interest (Amber Warning) */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-600">
+                        <AlertCircle className="w-5 h-5" />
+                     </div>
+                     <div>
+                        <p className="text-slate-600 text-sm mb-1">
+                           Commercial interests or associations that might pose a conflict of interest must be declared at the <strong>bottom of the poster</strong>.
+                        </p>
+                        <p className="text-slate-600 text-sm">
+                           Funding sources should also be acknowledged where applicable.
+                        </p>
+                     </div>
+                  </div>
+
+                  {/* Disclaimer */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-slate-100 p-2 rounded-lg text-slate-600">
+                        <Gavel className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 text-sm">
+                        The decision of the judges for poster presentations is final and any appeal will not be entertained.
+                     </p>
+                  </div>
+
+              </div>
+           </div>
+        </div>
+
         <div className="grid md:grid-cols-1 gap-6 mb-12">
            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-start gap-4">
               <div className="p-3 bg-pink-100 rounded-full text-pink-600">
@@ -117,5 +198,3 @@ const PosterPresentation: React.FC = () => {
 };
 
 export default PosterPresentation;
-
-
