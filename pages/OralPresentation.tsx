@@ -27,7 +27,7 @@ const OralPresentation: React.FC = () => {
                 </div>
             </div>
 
-            {/* Important Reminder Section */}
+            {/* Important Reminder Section - UPDATED */}
             <div className="bg-amber-50 border border-amber-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
                 <div className="p-2 bg-amber-100 rounded-full text-amber-600 shrink-0">
                   <AlertCircle className="w-5 h-5" />
@@ -35,7 +35,16 @@ const OralPresentation: React.FC = () => {
                 <div>
                   <h3 className="text-amber-900 font-bold mb-1">Important Reminder</h3>
                   <p className="text-amber-800 text-sm leading-relaxed">
-                    All participants are required to submit their work in the form of an abstract. The Scientific Committee will review all submissions and determine whether each accepted abstract will be assigned to an oral or poster presentation.
+                    All participants are required to{' '}
+                    <a 
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfKbb-GYcvo_qT0BwtdS5jbizj-y6FIizKoHh9tNGcQn7mYfw/viewform?usp=sharing&ouid=102140745386971931896"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold underline decoration-amber-800 hover:text-amber-950 transition-colors"
+                    >
+                      submit their work
+                    </a>{' '}
+                    in the form of an abstract. The Scientific Committee will review all submissions and determine whether each accepted abstract will be assigned to an oral or poster presentation.
                   </p>
                 </div>
             </div>
@@ -43,7 +52,7 @@ const OralPresentation: React.FC = () => {
 
         {/* Content */}
         <div className="grid md:grid-cols-3 gap-8">
-           
+            
            {/* Main Guidelines */}
            <div className="md:col-span-2 space-y-10">
               
@@ -111,117 +120,10 @@ const OralPresentation: React.FC = () => {
 
                     {/* Standardized List Items */}
                     <div className="space-y-6">
-                        
-                        {/* Permission */}
-                        <div className="flex gap-4 items-start">
-                           <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
-                              <FileCheck className="w-5 h-5" />
-                           </div>
-                           <p className="text-slate-600 text-sm leading-relaxed">
-                              You agree to give us permission on behalf of all authors and/or co-authors to display and store the abstract (submitted text only), together with author names, and biographies where supplied in different formats including print, electronic and digital forms (including on the PRC webpage).
-                           </p>
-                        </div>
-
-                        {/* Accuracy */}
-                        <div className="flex gap-4 items-start">
-                           <div className="mt-1 bg-blue-100 p-2 rounded-lg text-blue-700">
-                              <ShieldCheck className="w-5 h-5" />
-                           </div>
-                           <p className="text-slate-600 text-sm leading-relaxed">
-                              The author is responsible for the accuracy of the abstract and oral presentation and should ensure that they have written entirely original work which does not infringe any copyright.
-                           </p>
-                        </div>
-
-                        {/* Co-Authors */}
-                        <div className="flex gap-4 items-start">
-                           <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
-                              <Users className="w-5 h-5" />
-                           </div>
-                           <p className="text-slate-600 text-sm leading-relaxed">
-                              The corresponding author should ensure that all appropriate co-authors are included in the abstract and that the submission has been approved by all authors.
-                           </p>
-                        </div>
-
-                        {/* Registration (Pink Warning) */}
-                        <div className="flex gap-4 items-start">
-                           <div className="mt-1 bg-pink-100 p-2 rounded-lg text-pink-600">
-                              <AlertCircle className="w-5 h-5" />
-                           </div>
-                           <p className="text-slate-600 text-sm leading-relaxed">
-                              Presenting authors for oral presentations <strong>must register and attend</strong> the conference as a delegate or the abstract will be withdrawn. The authors will immediately notify the PRC organizing committee if they are unable to present an abstract or if the presenting author is changed.
-                           </p>
-                        </div>
-
-                        {/* Conflict of Interest (Amber Warning) */}
-                        <div className="flex gap-4 items-start">
-                           <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-600">
-                              <AlertCircle className="w-5 h-5" />
-                           </div>
-                           <p className="text-slate-600 text-sm leading-relaxed">
-                              If the author(s) have any commercial interest or associations that might pose a conflict of interest regarding their submission, they must be declared on the title slide.
-                           </p>
-                        </div>
-
-                        {/* Photography */}
-                        <div className="flex gap-4 items-start">
-                           <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
-                              <Camera className="w-5 h-5" />
-                           </div>
-                           <p className="text-slate-600 text-sm leading-relaxed">
-                              You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
-                           </p>
-                        </div>
-
-                        {/* Final Decision */}
-                        <div className="flex gap-4 items-start">
-                           <div className="mt-1 bg-slate-100 p-2 rounded-lg text-slate-600">
-                              <Gavel className="w-5 h-5" />
-                           </div>
-                           <p className="text-slate-600 text-sm leading-relaxed">
-                              The decision of the judges for oral presentations is final and any appeal will not be entertained.
-                           </p>
-                        </div>
-
-                    </div>
-                 </div>
-              </section>
-           </div>
-
-           {/* Sidebar Info */}
-           <div className="space-y-6">
-              <div className="bg-lime-50 p-6 rounded-xl border border-lime-100">
-                 <h3 className="text-lg font-bold text-lime-800 mb-4">Important Dates</h3>
-                 <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                       <div className="w-1.5 h-1.5 rounded-full bg-lime-500 mt-2"></div>
-                       <div>
-                          <div className="text-xs text-lime-600 uppercase font-bold">Abstract Submission</div>
-                          <div className="text-slate-800 font-medium">{ABSTRACT_DEADLINE}</div>
-                       </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                       <div className="w-1.5 h-1.5 rounded-full bg-pink-500 mt-2"></div>
-                       <div>
-                          <div className="text-xs text-lime-600 uppercase font-bold">Slides Submission</div>
-                          <div className="text-slate-800 font-medium">3 August 2026</div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
-                 <Quote className="absolute top-4 left-4 w-8 h-8 text-pink-100 -z-0" />
-                 <p className="text-sm text-slate-600 italic font-serif relative z-10 leading-relaxed">
-                   "Somewhere, something incredible is waiting to be known."
-                 </p>
-                 <p className="text-xs text-pink-500 font-bold mt-3 text-right">— Dr. Carl Sagan</p>
-              </div>
-           </div>
-
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default OralPresentation;
+                       
+                       {/* Permission */}
+                       <div className="flex gap-4 items-start">
+                          <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                             <FileCheck className="w-5 h-5" />
+                          </div>
+                          <p className="text-slate-600 text-sm leading-relaxed">
