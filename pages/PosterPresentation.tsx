@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE, POSTER_TEMPLATE_LINK } from '../constants';
-import { MonitorPlay, Layout, Award, Download, Quote, AlertCircle, FileText, FileCheck, ShieldCheck, Users, Camera, Gavel } from 'lucide-react';
+import { MonitorPlay, Layout, Award, Download, Quote, AlertCircle, FileText, FileCheck, ShieldCheck, Users, Camera, Gavel, Mail } from 'lucide-react';
 
 const PosterPresentation: React.FC = () => {
   return (
@@ -12,15 +12,33 @@ const PosterPresentation: React.FC = () => {
           <p className="text-lg text-slate-600">Showcase your research visually to a wider audience.</p>
         </div>
 
-        {/* Important Reminder Section */}
-        <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl shadow-sm mb-8 flex items-start gap-4">
-            <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
-            <div>
-                <h3 className="font-bold text-amber-900 text-lg mb-2">Important Reminder</h3>
-                <p className="text-amber-800 leading-relaxed">
-                    All participants are required to submit their work in the form of an abstract. The Scientific Committee will review all submissions and determine whether each accepted abstract will be assigned to an oral or poster presentation.
-                </p>
+        {/* Notices Section (Grouped for consistent spacing) */}
+        <div className="space-y-4 mb-10">
+            
+            {/* Communication Notice (Added) */}
+            <div className="bg-blue-50 border border-blue-100 p-6 rounded-xl flex items-start gap-4 shadow-sm">
+                <div className="p-2 bg-blue-100 rounded-full text-blue-600 shrink-0">
+                   <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                   <h3 className="text-blue-900 font-bold mb-1">Communication</h3>
+                   <p className="text-blue-800 text-sm leading-relaxed">
+                      All necessary information—including the acceptance decision, technical guidelines, and presentation logistics—will be communicated to authors via email.
+                   </p>
+                </div>
             </div>
+
+            {/* Important Reminder Section */}
+            <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl shadow-sm flex items-start gap-4">
+                <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+                <div>
+                    <h3 className="font-bold text-amber-900 text-lg mb-2">Important Reminder</h3>
+                    <p className="text-amber-800 leading-relaxed">
+                        All participants are required to submit their work in the form of an abstract. The Scientific Committee will review all submissions and determine whether each accepted abstract will be assigned to an oral or poster presentation.
+                    </p>
+                </div>
+            </div>
+
         </div>
 
         {/* E-Poster Specs Section */}
@@ -90,7 +108,7 @@ const PosterPresentation: React.FC = () => {
            </div>
         </div>
 
-        {/* Awards Section (Moved before Guidelines) */}
+        {/* Awards Section */}
         <div className="grid md:grid-cols-1 gap-6 mb-8">
            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-start gap-4">
               <div className="p-3 bg-pink-100 rounded-full text-pink-600">
@@ -105,7 +123,7 @@ const PosterPresentation: React.FC = () => {
            </div>
         </div>
 
-        {/* General Guidelines Section (Standardized) */}
+        {/* General Guidelines Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-8">
            
            <div className="bg-slate-800 p-6">
