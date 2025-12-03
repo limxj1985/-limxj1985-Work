@@ -97,7 +97,7 @@ const OralPresentation: React.FC = () => {
                  </div>
               </section>
 
-              {/* Terms and Conditions (Standardized) */}
+              {/* General Guidelines (Standardized) */}
               <section>
                  <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
                     <FileText className="w-6 h-6 text-lime-600" />
