@@ -1,0 +1,91 @@
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { NAV_ITEMS, REGISTRATION_LINK } from '../constants';
+
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-lime-100 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          
+          {/* Logo */}
+          <div className="flex-shrink-0 flex items-center gap-3">
+             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                P
+             </div>
+             <div className="flex flex-col">
+                <span className="font-bold text-slate-800 text-lg leading-tight">PRC 2026</span>
+                <span className="text-xs text-slate-500 font-medium tracking-wide">PERAK MEDICAL RESEARCH</span>
+             </div>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-1">
+            {NAV_ITEMS.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    isActive
+                      ? 'bg-lime-100 text-lime-800 shadow-inner'
+                      : 'text-slate-600 hover:text-lime-600 hover:bg-lime-50'
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <a 
+                href={REGISTRATION_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="ml-4 px-5 py-2 rounded-full bg-pink-500 text-white text-sm font-bold shadow-md hover:bg-pink-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+                Register Now
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-slate-600 hover:text-lime-600 focus:outline-none"
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-slate-100">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {NAV_ITEMS.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `block px-3 py-3 rounded-lg text-base font-medium ${
+                    isActive
+                      ? 'bg-lime-50 text-lime-700'
+                      : 'text-slate-600 hover:bg-slate-50 hover:text-lime-600'
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
