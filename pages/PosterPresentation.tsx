@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE, POSTER_TEMPLATE_LINK } from '../constants';
-import { MonitorPlay, Layout, Award, Download, Quote } from 'lucide-react';
+import { MonitorPlay, Layout, Award, Download, Quote, Gavel } from 'lucide-react';
 
 const PosterPresentation: React.FC = () => {
   return (
@@ -74,8 +74,19 @@ const PosterPresentation: React.FC = () => {
                        <span className="font-bold text-slate-900">3 August 2026</span>
                     </div>
                  </div>
+                 
                  <div className="mt-6 p-4 bg-lime-100 rounded-lg text-sm text-lime-800">
                     <strong>Note:</strong> This is an E-Poster only event. No physical poster printing is required.
+                 </div>
+
+                 {/* Committee Decision Notice */}
+                 <div className="mt-4 p-4 bg-amber-50 border border-amber-100 rounded-lg flex items-start gap-3">
+                     <div className="mt-0.5 text-amber-600">
+                        <Gavel className="w-4 h-4" />
+                     </div>
+                     <p className="text-amber-900 text-xs leading-relaxed">
+                        The Scientific Committee reserves the right to decide on the acceptance of abstracts for either oral or poster presentation. Any appeal will not be entertained.
+                     </p>
                  </div>
               </div>
            </div>
