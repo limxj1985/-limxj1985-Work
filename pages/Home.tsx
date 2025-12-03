@@ -24,8 +24,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-lime-50 via-white to-pink-50 py-20 lg:py-32 overflow-hidden">
         <NetworkBackground />
@@ -111,73 +110,98 @@ const Home: React.FC = () => {
 
       {/* About Section (with Rotating Images) */}
       <section className="py-20 bg-slate-50">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-               <div>
+              <div>
                   <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Attend?</h2>
                   <p className="text-slate-600 mb-4 leading-relaxed">
                     The Perak Annual Medical Research Conference 2026 brings together the brightest minds in clinical research. This year, we focus on the power of networks—how connecting researchers, clinicians, and institutions can accelerate medical breakthroughs.
                   </p>
                   <ul className="space-y-4 mt-8">
-                     {[
+                    {[
                         "Gain insights from expert Keynote and Plenary speakers.",
                         "Network with professionals from CRC, MOH, and private sectors.",
                         "Showcase your research in Oral and Poster presentations.",
                         "Participate in lucky draws and win exciting prizes."
-                     ].map((item, idx) => (
+                    ].map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                           <div className="mt-1 w-5 h-5 rounded-full bg-lime-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">✓</div>
-                           <span className="text-slate-700">{item}</span>
+                          <div className="mt-1 w-5 h-5 rounded-full bg-lime-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">✓</div>
+                          <span className="text-slate-700">{item}</span>
                         </li>
-                     ))}
+                    ))}
                   </ul>
-               </div>
-               
-               {/* Rotating Image Container */}
-               <div className="relative h-96">
-                 <div className="absolute inset-0 bg-gradient-to-tr from-pink-200 to-lime-200 rounded-2xl transform rotate-3"></div>
-                 
-                 {ROTATING_IMAGES.map((imageUrl, index) => (
-                   <img 
-                     key={index}
-                     src={imageUrl} 
-                     alt={`Conference Topic ${index + 1}`} 
-                     className={`absolute inset-0 rounded-2xl shadow-lg w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000 ease-in-out ${
-                       index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                     }`}
-                   />
-                 ))}
-               </div>
+              </div>
+              
+              {/* Rotating Image Container */}
+              <div className="relative h-96">
+                <div className="absolute inset-0 bg-gradient-to-tr from-pink-200 to-lime-200 rounded-2xl transform rotate-3"></div>
+                
+                {ROTATING_IMAGES.map((imageUrl, index) => (
+                  <img 
+                    key={index}
+                    src={imageUrl} 
+                    alt={`Conference Topic ${index + 1}`} 
+                    className={`absolute inset-0 rounded-2xl shadow-lg w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000 ease-in-out ${
+                      index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                  />
+                ))}
+              </div>
 
             </div>
-         </div>
+        </div>
       </section>
 
       {/* Quote Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-           <Quote className="w-12 h-12 text-pink-300 mx-auto mb-6 opacity-50" />
-           <blockquote className="text-2xl md:text-3xl font-serif text-slate-700 italic leading-relaxed mb-6">
-             "Research is to see what everybody else has seen, and to think what nobody else has thought."
-           </blockquote>
-           <cite className="text-lime-600 font-bold tracking-wide not-italic uppercase text-sm">
-             — Albert Szent-Györgyi
-           </cite>
+          <Quote className="w-12 h-12 text-pink-300 mx-auto mb-6 opacity-50" />
+          <blockquote className="text-2xl md:text-3xl font-serif text-slate-700 italic leading-relaxed mb-6">
+            "Research is to see what everybody else has seen, and to think what nobody else has thought."
+          </blockquote>
+          <cite className="text-lime-600 font-bold tracking-wide not-italic uppercase text-sm">
+            — Albert Szent-Györgyi
+          </cite>
+        </div>
+      </section>
+
+      {/* Location Map Section - ADDED */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Event Location</h2>
+            <p className="text-slate-600 flex items-center justify-center gap-2">
+              <MapPin className="w-5 h-5 text-pink-500" />
+              {CONFERENCE_VENUE}
+            </p>
+          </div>
+          <div className="w-full h-96 rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-200">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.223072230232!2d101.0792373147614!3d4.667926996610086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec77030e6693%3A0x6c6e75294527926!2sCasuarina%20Convention%20Centre!5e0!3m2!1sen!2smy!4v1625627280000!5m2!1sen!2smy" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Conference Venue Map"
+            ></iframe>
+          </div>
         </div>
       </section>
 
       {/* Organizers */}
-      <section className="py-12 bg-slate-50">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-10">Co-Organised By</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-center items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Text Placeholders for Logos based on User Request */}
-             <div className="font-bold text-sm text-slate-800 leading-tight">CRC Hospital<br/>Raja Permaisuri Bainun</div>
-             <div className="font-bold text-sm text-slate-800 leading-tight">CRC Hospital<br/>Taiping</div>
-             <div className="font-bold text-sm text-slate-800 leading-tight">CRC Hospital<br/>Seri Manjung</div>
-             <div className="font-bold text-sm text-slate-800 leading-tight">PGMES</div>
-             <div className="font-bold text-sm text-slate-800 leading-tight">JKN Perak</div>
-             <div className="font-bold text-sm text-slate-800 leading-tight">CRM</div>
+            {/* Text Placeholders for Logos based on User Request */}
+            <div className="font-bold text-sm text-slate-800 leading-tight">CRC Hospital<br/>Raja Permaisuri Bainun</div>
+            <div className="font-bold text-sm text-slate-800 leading-tight">CRC Hospital<br/>Taiping</div>
+            <div className="font-bold text-sm text-slate-800 leading-tight">CRC Hospital<br/>Seri Manjung</div>
+            <div className="font-bold text-sm text-slate-800 leading-tight">PGMES</div>
+            <div className="font-bold text-sm text-slate-800 leading-tight">JKN Perak</div>
+            <div className="font-bold text-sm text-slate-800 leading-tight">CRM</div>
           </div>
         </div>
       </section>
