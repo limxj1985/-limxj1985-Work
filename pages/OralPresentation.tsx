@@ -10,11 +10,7 @@ const OralPresentation: React.FC = () => {
         {/* Header */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Oral Presentation Guidelines</h1>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-pink-100 text-pink-700 rounded-full font-semibold text-sm">
-             <Clock className="w-4 h-4" />
-             Abstract Deadline: {ABSTRACT_DEADLINE}
-          </div>
-        </div>
+         </div>
 
         {/* Notices Section */}
         <div className="space-y-4 mb-10">
