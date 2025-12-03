@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE, POSTER_TEMPLATE_LINK } from '../constants';
-import { MonitorPlay, Layout, Award, Download, Quote, Gavel } from 'lucide-react';
+import { MonitorPlay, Layout, Award, Download, Quote, AlertCircle } from 'lucide-react';
 
 const PosterPresentation: React.FC = () => {
   return (
@@ -8,8 +8,19 @@ const PosterPresentation: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Poster Presentation</h1>
+          <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Poster Presentation Guidelines</h1>
           <p className="text-lg text-slate-600">Showcase your research visually to a wider audience.</p>
+        </div>
+
+        {/* Important Reminder Section */}
+        <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl shadow-sm mb-8 flex items-start gap-4">
+            <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+            <div>
+                <h3 className="font-bold text-amber-900 text-lg mb-2">Important Reminder</h3>
+                <p className="text-amber-800 leading-relaxed">
+                    All participants are required to submit their work in the form of an abstract. The Scientific Committee will review all submissions and determine whether each accepted abstract will be assigned to an oral or poster presentation.
+                </p>
+            </div>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
@@ -40,7 +51,7 @@ const PosterPresentation: React.FC = () => {
 
                  <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
                     <Layout className="w-5 h-5 text-lime-600" />
-                    Formatting Rules
+                    Poster Format
                  </h3>
                  <ul className="space-y-3 text-slate-600 text-sm">
                     <li className="flex gap-3">
@@ -55,15 +66,11 @@ const PosterPresentation: React.FC = () => {
                        <span className="text-lime-500 font-bold">•</span>
                        <span className="leading-relaxed"><strong>Readability:</strong> Ensure all text and graphics are high-resolution and readable on a digital screen.</span>
                     </li>
-                    <li className="flex gap-3">
-                       <span className="text-lime-500 font-bold">•</span>
-                       <span className="leading-relaxed"><strong>Content:</strong> Include Abstract Title, Authors, Institution, Introduction, Methodology, Results, and Conclusion as per the template structure.</span>
-                    </li>
                  </ul>
               </div>
 
               <div className="bg-slate-50 p-6 rounded-xl h-fit">
-                 <h3 className="text-lg font-bold text-slate-800 mb-4">Submission Details</h3>
+                 <h3 className="text-lg font-bold text-slate-800 mb-4">Important Dates</h3>
                  <div className="space-y-4">
                     <div className="flex justify-between items-center border-b border-slate-200 pb-2">
                        <span className="text-slate-600">Abstract Due</span>
@@ -77,16 +84,6 @@ const PosterPresentation: React.FC = () => {
                  
                  <div className="mt-6 p-4 bg-lime-100 rounded-lg text-sm text-lime-800">
                     <strong>Note:</strong> This is an E-Poster only event. No physical poster printing is required.
-                 </div>
-
-                 {/* Committee Decision Notice */}
-                 <div className="mt-4 p-4 bg-amber-50 border border-amber-100 rounded-lg flex items-start gap-3">
-                     <div className="mt-0.5 text-amber-600">
-                        <Gavel className="w-4 h-4" />
-                     </div>
-                     <p className="text-amber-900 text-xs leading-relaxed">
-                        The Scientific Committee reserves the right to decide on the acceptance of abstracts for either oral or poster presentation. Any appeal will not be entertained.
-                     </p>
                  </div>
               </div>
            </div>
@@ -117,6 +114,9 @@ const PosterPresentation: React.FC = () => {
       </div>
     </div>
   );
+};
+
+export default PosterPresentation;
 };
 
 export default PosterPresentation;
