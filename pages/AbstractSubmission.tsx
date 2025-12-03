@@ -259,7 +259,7 @@ const AbstractSubmission: React.FC = () => {
                         <Camera className="w-5 h-5" />
                      </div>
                      <p className="text-slate-600 text-sm leading-relaxed">
-                        You give us permission to photograph your oral presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
+                        You give us permission to photograph your oral or poster presentation at the conference, which may be used on the PRC website and/or CRC promotional material.
                      </p>
                   </div>
 
