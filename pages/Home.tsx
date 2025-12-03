@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             <span className="text-pink-500"> 2026</span>
           </h1>
           
-          <p className="max-w-4xl mx-auto text-2xl md:text-3xl text-slate-800 mb-10 font-bold leading-snug drop-shadow-sm">
+          <p className="max-w-4xl mx-auto text-3xl md:text-4xl text-slate-800 mb-10 font-bold leading-snug drop-shadow-sm">
             "Connecting Minds: Empowering Clinical Research Through Collaborative Networks"
           </p>
 
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
               <p className="text-slate-600 text-sm max-w-xs">{CONFERENCE_VENUE}</p>
             </div>
 
-            {/* Card 3 - Replaced Theme with Important Dates */}
+            {/* Card 3 - Important Deadlines */}
             <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col items-center text-center group hover:border-lime-300 transition-all">
               <div className="w-14 h-14 bg-lime-100 rounded-full flex items-center justify-center text-lime-600 mb-4 group-hover:bg-lime-500 group-hover:text-white transition-colors">
                 <Clock className="w-7 h-7" />
@@ -117,9 +117,9 @@ const Home: React.FC = () => {
                <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-pink-200 to-lime-200 rounded-2xl transform rotate-3"></div>
                   <img 
-                    src="https://picsum.photos/600/400" 
-                    alt="Conference Networking" 
-                    className="relative rounded-2xl shadow-lg w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" 
+                    alt="Medical Research Laboratory" 
+                    className="relative rounded-2xl shadow-lg w-full h-auto object-cover hover:scale-[1.02] transition-all duration-500"
                   />
                </div>
             </div>
@@ -157,5 +157,7 @@ const Home: React.FC = () => {
     </div>
   );
 };
+
+export default Home;
 
 export default Home;
