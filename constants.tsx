@@ -62,7 +62,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     title: "Prize Giving Ceremony", 
     location: "Auditorium", 
     type: "general",
-    details: ["Poster Presentation", "Best Case Report", "Oral Presentation"]
+    details: ["Poster Presentation Awards", "Best Case Report", "Oral Presentation Awards"]
   },
   { time: "17:20 - 17:30", title: "Closing Remarks", location: "Auditorium", type: "general" },
 ];
