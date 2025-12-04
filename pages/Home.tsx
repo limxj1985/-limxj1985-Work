@@ -308,26 +308,27 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Location Map Section */}
+      {/* Map Section */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Event Location</h2>
-            <p className="text-slate-600 text-lg flex flex-col md:flex-row items-center justify-center gap-2 text-center">
-              <MapPin className="w-5 h-5 text-pink-500 inline-block" /> 
-              <span>Auditorium, Level 4, Ambulatory Care Centre, HRPB, Ipoh</span>
-            </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-slate-600">
+               <MapPin className="w-5 h-5 text-pink-500" />
+               <span className="font-semibold">Ambulatory Care Centre (ACC),</span>
+               <span>Raja Permaisuri Bainun Hospital, Ipoh</span>
+            </div>
           </div>
-          <div className="w-full h-[450px] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-200 relative">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.898724864973!2d101.0899637758683!3d4.590282795384445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec6301879b73%3A0x2607066114770766!2sHospital%20Raja%20Permaisuri%20Bainun!5e0!3m2!1sen!2smy!4v1709618000000!5m2!1sen!2smy"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
+          <div className="w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.885662706859!2d101.08947631538356!3d4.603411043685519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec830e017681%3A0x629158025287518!2sHospital%20Raja%20Permaisuri%20Bainun!5e0!3m2!1sen!2smy!4v1629876543210!5m2!1sen!2smy" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Conference Venue Map - HRPB Ipoh"
+              title="Map to Ambulatory Care Centre (ACC), HRPB Ipoh"
               className="grayscale hover:grayscale-0 transition-all duration-700"
             ></iframe>
           </div>
