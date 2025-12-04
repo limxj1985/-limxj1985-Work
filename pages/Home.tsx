@@ -2,6 +2,8 @@ import React, { useState, useEffect, ReactNode } from 'react';
 import { Calendar, MapPin, Clock, ArrowRight, Quote, LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 // Assumes these constants exist in your project
+// NOTE: The countdown below currently uses a HARDCODED date for demonstration.
+// You will need to update the CountdownTimer component to use CONFERENCE_DATE later.
 import { CONFERENCE_DATE, REGISTRATION_LINK } from '../constants';
 // Adjust path if necessary based on your actual project structure
 import heroBg from '../components/assets/brain-network-banner.png';
@@ -78,14 +80,15 @@ const CountdownTimer = () => {
     const [hasEnded, setHasEnded] = useState(false);
 
     const calculateTimeLeft = () => {
-        // --- IMPORTANT: FIX ---
-        // Changed date format from '2026-9-9' to '2026-09-09' for cross-browser compatibility.
+        // Using a hardcoded future date for demonstration: Sept 9, 2026
+        // Ensure this format remains YYYY-MM-DDTHH:mm:ss for browser compatibility
         const targetDate = new Date('2026-09-09T08:00:00'); 
 
         const now = new Date();
-        // Ensure we don't get NaN if date parsing fails
+        
+        // Safety check: if date parsing fails, stop here.
         if (isNaN(targetDate.getTime())) {
-             console.error("Invalid Target Date in CountdownTimer");
+             console.error("CountdownTimer Error: Invalid Target Date format.");
              return;
         }
 
@@ -100,6 +103,7 @@ const CountdownTimer = () => {
             });
             setHasEnded(false);
         } else {
+             // If the date has passed
              setHasEnded(true);
         }
     };
@@ -123,7 +127,9 @@ const CountdownTimer = () => {
     );
 
     if (hasEnded) {
-         return <div className="text-2xl text-lime-300 font-bold animate-bounce mb-10">Conference has started!</div>;
+        // This shows if the date has passed. 
+        // If you don't see the timer, make sure your targetDate isn't in the past!
+         return <div className="text-2xl text-lime-300 font-bold animate-bounce mb-10 p-4 bg-white/10 rounded-xl">Conference has started!</div>;
     }
 
     return (
@@ -185,7 +191,7 @@ const Home: React.FC = () => {
             "Connecting Minds: Empowering Clinical Research Through Collaborative Networks"
           </p>
 
-          {/* --- NEW: COUNTDOWN TIMER ADDED HERE --- */}
+          {/* --- COUNTDOWN TIMER IS INSERTED HERE --- */}
           <CountdownTimer />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -334,7 +340,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Organizers - Confirmed text only */}
+      {/* Organizers */}
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Co-Organised By</p>
