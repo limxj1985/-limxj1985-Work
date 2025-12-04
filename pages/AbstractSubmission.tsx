@@ -44,7 +44,7 @@ const AbstractSubmission: React.FC = () => {
                     <h3 className="font-bold text-slate-800 text-sm">Submission Deadline</h3>
                     <p className="text-sm text-slate-600">
                       12 June 2026, 11:59 PM (MYT)<br/>
-                      <span className="text-xs text-red-500 font-medium">No late submissions accepted</span>
+                      <span className="text-xs text-red-500 font-medium">Late submissions will not be accepted</span>
                     </p>
                   </div>
                </div>
@@ -237,6 +237,16 @@ const AbstractSubmission: React.FC = () => {
                      </p>
                   </div>
 
+                {/* Home town */}
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-lime-100 p-2 rounded-lg text-lime-700">
+                        <Users className="w-5 h-5" />
+                     </div>
+                     <p className="text-slate-600 leading-relaxed text-sm">
+                        At least one author must be based in Perak at the time of the study.
+                     </p>
+                  </div>
+                
                   {/* Mandatory Registration (Pink Warning) */}
                   <div className="flex gap-4 items-start">
                      <div className="mt-1 bg-pink-100 p-2 rounded-lg text-pink-600">
