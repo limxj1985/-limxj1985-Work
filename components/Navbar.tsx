@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { NAV_ITEMS, REGISTRATION_LINK } from '../constants';
+import { NAV_ITEMS } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
              </div>
              <div className="flex flex-col">
                 <span className="font-bold text-slate-800 text-lg leading-tight">PRC 2026</span>
-                <span className="text-xs text-slate-500 font-medium tracking-wide">PERAK MEDICAL RESEARCH</span>
+                <span className="text-xs text-slate-500 font-medium tracking-wide">PERAK ANNUAL MEDICAL RESEARCH</span>
              </div>
           </div>
 
@@ -39,14 +39,9 @@ const Navbar: React.FC = () => {
                 {item.label}
               </NavLink>
             ))}
-            <a 
-                href={REGISTRATION_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="ml-4 px-5 py-2 rounded-full bg-pink-500 text-white text-sm font-bold shadow-md hover:bg-pink-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
-            >
-                Register Now
-            </a>
+            {/* --- REMOVED THE REGISTER NOW BUTTON FROM HERE --- 
+               The <a> tag that was here is now deleted.
+            */}
           </div>
 
           {/* Mobile Menu Button */}
