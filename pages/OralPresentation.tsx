@@ -169,14 +169,20 @@ const OralPresentation: React.FC = () => {
                        </div>
 
                        {/* Conflict of Interest (Amber Warning) */}
-                       <div className="flex gap-4 items-start">
-                          <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-600">
-                             <AlertCircle className="w-5 h-5" />
-                          </div>
-                          <p className="text-slate-600 text-sm leading-relaxed">
-                             If the author(s) have any commercial interest or associations that might pose a conflict of interest regarding their submission, they must be declared on the title slide.
-                          </p>
-                       </div>
+                  <div className="flex gap-4 items-start">
+                     <div className="mt-1 bg-amber-100 p-2 rounded-lg text-amber-600">
+                        <AlertCircle className="w-5 h-5" />
+                     </div>
+                     <div>
+                        <p className="text-slate-600 text-sm mb-1">
+                           Commercial interests or associations that might pose a conflict of interest must be declared.
+                        </p>
+                        <ul className="list-disc list-inside text-sm text-slate-600 space-y-1 ml-1">
+                           <li><strong>If accepted:</strong> Declaration must be made on the title slide (Oral) or at the bottom of the poster (Poster).</li>
+                           <li>Poster presentations should include funding and other acknowledgments where applicable.</li>
+                        </ul>
+                     </div>
+                  </div>
 
                        {/* Photography */}
                        <div className="flex gap-4 items-start">
