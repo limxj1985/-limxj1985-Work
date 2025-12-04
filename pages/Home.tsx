@@ -127,8 +127,6 @@ const CountdownTimer = () => {
     );
 
     if (hasEnded) {
-        // This shows if the date has passed. 
-        // If you don't see the timer, make sure your targetDate isn't in the past!
          return <div className="text-2xl text-lime-300 font-bold animate-bounce mb-10 p-4 bg-white/10 rounded-xl">Conference has started!</div>;
     }
 
@@ -325,8 +323,9 @@ const Home: React.FC = () => {
             </p>
           </div>
           <div className="w-full h-[450px] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-200 relative">
+            {/* --- UPDATED GOOGLE MAP EMBED LINK --- */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.898724864973!2d101.0899637758683!3d4.590282795384445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec6301879b73%3A0x2607066114770766!2sHospital%20Raja%20Permaisuri%20Bainun!5e0!3m2!1sen!2smy!4v1709618000000!5m2!1sen!2smy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8987304871365!2d101.08738887586833!3d4.59028279538444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec6301879b73%3A0x2607066114770766!2sHospital%20Raja%20Permaisuri%20Bainun!5e0!3m2!1sen!2smy!4v1709625000000!5m2!1sen!2smy"
               width="100%"
               height="100%"
               style={{ border: 0 }}
