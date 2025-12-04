@@ -25,7 +25,6 @@ const Footer: React.FC = () => {
                  <li>CRC Hospital Seri Manjung</li>
                  <li>Postgraduate Medical Education Society (PGMES)</li>
                  <li>Jabatan Kesihatan Negeri Perak</li>
-                 <li>Clinical Research Malaysia (CRM)</li>
               </ul>
             </div>
           </div>
