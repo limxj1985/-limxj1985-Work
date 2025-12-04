@@ -3,6 +3,10 @@ import { Calendar, MapPin, Users, Clock, ArrowRight, Quote } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import { CONFERENCE_DATE, REGISTRATION_LINK } from '../constants';
 
+// --- UPDATED IMPORT ---
+// We go up one level (..), then into components -> assets
+import heroBg from '../components/assets/brain-network-banner.png';
+
 // Images for rotating carousel
 const ROTATING_IMAGES = [
   'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80', // Lab research
@@ -17,18 +21,19 @@ const Home: React.FC = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % ROTATING_IMAGES.length);
-    }, 4000); // Change image every 4000ms (4 seconds)
+    }, 4000); 
 
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
+    return () => clearInterval(intervalId); 
   }, []);
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
+        {/* --- UPDATED IMAGE SOURCE --- */}
         <img 
-          src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          alt="Hero Background" 
+          src={heroBg} 
+          alt="Brain Network Background" 
           className="absolute inset-0 w-full h-full object-cover opacity-10"
         />
         
