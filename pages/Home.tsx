@@ -334,22 +334,24 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Organizers - Confirmed text only */}
-      <section className="py-16 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Co-Organised By</p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-6 gap-x-4 justify-center items-center">
-            {ORGANIZER_NAMES.map((name, index) => (
-                <div key={index} className="flex items-center justify-center h-full px-2">
-                     <div className="font-bold text-base text-slate-700 whitespace-pre-line leading-tight">
-                        {name}
-                    </div>
-                </div>
-            ))}
+      {/* Organizers */}
+<section className="py-16 bg-white border-t border-slate-100">
+  <div className="max-w-7xl mx-auto px-4 text-center">
+    <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Co-Organised By</p>
+    
+    {/* Added 'items-stretch' to the grid container */}
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-center items-stretch">
+      {ORGANIZER_NAMES.map((name, index) => (
+          // Added 'flex-col', 'h-full' and 'justify-center' to the item container
+          <div key={index} className="flex flex-col items-center justify-center h-full px-4 py-2 bg-slate-50/50 rounded-lg">
+                <div className="font-bold text-base text-slate-700 whitespace-pre-line leading-tight">
+                  {name}
+              </div>
           </div>
-        </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
     </div>
   );
 };
