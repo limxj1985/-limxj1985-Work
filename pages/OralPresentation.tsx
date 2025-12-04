@@ -1,6 +1,6 @@
 import React from 'react';
 import { ABSTRACT_DEADLINE } from '../constants';
-import { Clock, Trophy, Award, Mail, FileText, CheckCircle, Quote, AlertCircle, FileCheck, ShieldCheck, Users, Camera, Gavel } from 'lucide-react';
+import { Trophy, Award, Mail, FileText, Quote, AlertCircle, FileCheck, ShieldCheck, Users, Camera, Gavel } from 'lucide-react';
 
 const OralPresentation: React.FC = () => {
   return (
