@@ -128,7 +128,7 @@ const Home: React.FC = () => {
                   <ul className="space-y-4 mt-8">
                     {[
                         "Gain insights from expert Keynote and Plenary speakers.",
-                        "Network with professionals from CRC, MOH, and private sectors.",
+                        "Network with professionals from CRC, MOH, academia, and private sectors.",
                         "Showcase your research in Oral and Poster presentations.",
                         "Participate in lucky draws and win exciting prizes."
                     ].map((item, idx) => (
