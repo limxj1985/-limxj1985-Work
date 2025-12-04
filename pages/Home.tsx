@@ -20,8 +20,7 @@ const ORGANIZER_NAMES = [
     "CRC Hospital\nSeri Manjung",
     "PGMES",
     "JKN Perak",
-    "CRM"
-];
+    ];
 
 // --- Sub-Components ---
 
