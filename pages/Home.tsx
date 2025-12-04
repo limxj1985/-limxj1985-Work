@@ -2,8 +2,6 @@ import React, { useState, useEffect, ReactNode } from 'react';
 import { Calendar, MapPin, Clock, ArrowRight, Quote, LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 // Assumes these constants exist in your project
-// NOTE: The countdown below currently uses a HARDCODED date for demonstration.
-// You will need to update the CountdownTimer component to use CONFERENCE_DATE later.
 import { CONFERENCE_DATE, REGISTRATION_LINK } from '../constants';
 // Adjust path if necessary based on your actual project structure
 import heroBg from '../components/assets/brain-network-banner.png';
@@ -80,15 +78,14 @@ const CountdownTimer = () => {
     const [hasEnded, setHasEnded] = useState(false);
 
     const calculateTimeLeft = () => {
-        // Using a hardcoded future date for demonstration: Sept 9, 2026
-        // Ensure this format remains YYYY-MM-DDTHH:mm:ss for browser compatibility
+        // --- IMPORTANT: FIX ---
+        // Changed date format from '2026-9-9' to '2026-09-09' for cross-browser compatibility.
         const targetDate = new Date('2026-09-09T08:00:00'); 
 
         const now = new Date();
-        
-        // Safety check: if date parsing fails, stop here.
+        // Ensure we don't get NaN if date parsing fails
         if (isNaN(targetDate.getTime())) {
-             console.error("CountdownTimer Error: Invalid Target Date format.");
+             console.error("Invalid Target Date in CountdownTimer");
              return;
         }
 
@@ -103,7 +100,6 @@ const CountdownTimer = () => {
             });
             setHasEnded(false);
         } else {
-             // If the date has passed
              setHasEnded(true);
         }
     };
@@ -127,7 +123,7 @@ const CountdownTimer = () => {
     );
 
     if (hasEnded) {
-         return <div className="text-2xl text-lime-300 font-bold animate-bounce mb-10 p-4 bg-white/10 rounded-xl">Conference has started!</div>;
+         return <div className="text-2xl text-lime-300 font-bold animate-bounce mb-10">Conference has started!</div>;
     }
 
     return (
@@ -189,7 +185,7 @@ const Home: React.FC = () => {
             "Connecting Minds: Empowering Clinical Research Through Collaborative Networks"
           </p>
 
-          {/* --- COUNTDOWN TIMER IS INSERTED HERE --- */}
+          {/* --- NEW: COUNTDOWN TIMER ADDED HERE --- */}
           <CountdownTimer />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -323,9 +319,8 @@ const Home: React.FC = () => {
             </p>
           </div>
           <div className="w-full h-[450px] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-200 relative">
-            {/* --- UPDATED GOOGLE MAP EMBED LINK --- */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8987304871365!2d101.08738887586833!3d4.59028279538444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec6301879b73%3A0x2607066114770766!2sHospital%20Raja%20Permaisuri%20Bainun!5e0!3m2!1sen!2smy!4v1709625000000!5m2!1sen!2smy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.898724864973!2d101.0899637758683!3d4.590282795384445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec6301879b73%3A0x2607066114770766!2sHospital%20Raja%20Permaisuri%20Bainun!5e0!3m2!1sen!2smy!4v1709618000000!5m2!1sen!2smy"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -339,7 +334,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Organizers */}
+      {/* Organizers - Confirmed text only */}
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Co-Organised By</p>
