@@ -178,9 +178,8 @@ const OralPresentation: React.FC = () => {
                            Commercial interests or associations that might pose a conflict of interest must be declared.
                         </p>
                         <ul className="list-disc list-inside text-sm text-slate-600 space-y-1 ml-1">
-                           <li><strong>If accepted:</strong> Declaration must be made on the title slide (Oral) or at the bottom of the poster (Poster).</li>
-                           <li>Poster presentations should include funding and other acknowledgments where applicable.</li>
-                        </ul>
+                           <li><strong>If accepted:</strong> Declaration must be made on the title slide (Oral).</li>
+                           </ul>
                      </div>
                   </div>
 
