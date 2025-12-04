@@ -223,7 +223,7 @@ const AbstractSubmission: React.FC = () => {
                         <ShieldCheck className="w-5 h-5" />
                      </div>
                      <p className="text-slate-600 leading-relaxed text-sm">
-                        Abstracts must be of original research. The author is responsible for the accuracy of the abstract content.
+                        Abstracts must be of <strong>original work</strong>. The author is responsible for the accuracy of the abstract content.
                      </p>
                   </div>
 
