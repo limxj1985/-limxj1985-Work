@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                  <li>CRC Hospital Taiping</li>
                  <li>CRC Hospital Seri Manjung</li>
                  <li>Postgraduate Medical Education Society (PGMES)</li>
-                 <li>Jabatan Kesihatan Perak</li>
+                 <li>Jabatan Kesihatan Negeri Perak</li>
                  <li>Clinical Research Malaysia (CRM)</li>
               </ul>
             </div>
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                    <Phone className="w-4 h-4 text-lime-500" />
-                   <span>05-208 7000 (EXT 5146)</span>
+                   <span>05-2085146</span>
                 </li>
              </ul>
           </div>
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-slate-800 pt-6 text-center text-slate-500 text-sm">
-          &copy; 2026 Perak Annual Medical Research Conference. All rights reserved.
+          &copy; 2026 Perak Annual Medical Research Conference. All Rights Reserved.
         </div>
       </div>
     </footer>
