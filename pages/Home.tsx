@@ -78,15 +78,17 @@ const CountdownTimer = () => {
     const [hasEnded, setHasEnded] = useState(false);
 
     const calculateTimeLeft = () => {
-        // --- IMPORTANT: REPLACE THIS WITH YOUR REAL DATE ---
-        // We are using a hardcoded date here to ensure the timer works for demo purposes.
-        // If your CONFERENCE_DATE constant is a specific date string (e.g., "2026-10-25"), uncomment the line below:
-        // const targetDate = new Date(CONFERENCE_DATE); 
-        
-        // Placeholder date: September 9, 2026 at 8:00 AM
-        const targetDate = new Date('2026-9-9T08:00:00'); 
+        // --- IMPORTANT: FIX ---
+        // Changed date format from '2026-9-9' to '2026-09-09' for cross-browser compatibility.
+        const targetDate = new Date('2026-09-09T08:00:00'); 
 
         const now = new Date();
+        // Ensure we don't get NaN if date parsing fails
+        if (isNaN(targetDate.getTime())) {
+             console.error("Invalid Target Date in CountdownTimer");
+             return;
+        }
+
         const difference = targetDate.getTime() - now.getTime();
 
         if (difference > 0) {
@@ -332,7 +334,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Organizers */}
+      {/* Organizers - Confirmed text only */}
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Co-Organised By</p>
