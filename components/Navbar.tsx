@@ -39,9 +39,6 @@ const Navbar: React.FC = () => {
                 {item.label}
               </NavLink>
             ))}
-            {/* --- REMOVED THE REGISTER NOW BUTTON FROM HERE --- 
-               The <a> tag that was here is now deleted.
-            */}
           </div>
 
           {/* Mobile Menu Button */}
