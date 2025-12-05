@@ -20,15 +20,21 @@ const ROTATING_IMAGES = [
 const ORGANIZERS = [
   { 
     name: "CRC", 
-    logo: logoCRC 
+    logo: logoCRC,
+    // CRC is likely square, so we make it smaller (h-14) to match the others visually
+    sizeClass: "h-14 md:h-20" 
   },
   { 
     name: "PGMES", 
-    logo: logoPGMES 
+    logo: logoPGMES,
+    // PGMES might be wider, so we allow it to be taller (h-16)
+    sizeClass: "h-16 md:h-24" 
   },
   { 
     name: "JKN Perak", 
-    logo: logoJKN 
+    logo: logoJKN,
+    // Standard size
+    sizeClass: "h-16 md:h-24" 
   },
 ];
 
