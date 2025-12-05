@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { CONFERENCE_DATE, REGISTRATION_LINK } from '../constants';
 // Adjust path if necessary based on your actual project structure
 import heroBg from '../components/assets/brain-network-banner.png';
+import logoCRC from '../components/assets/CRC logo Latest.jpg';
+import logoJKN from '../components/assets/jkn perak.jpeg';
+import logoPGMES from '../components/assets/pgmes.jpeg';
 
 // --- Constants & Data ---
 
@@ -14,13 +17,28 @@ const ROTATING_IMAGES = [
   'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80', // Scientists collaborating
 ];
 
-const ORGANIZER_NAMES = [
-    "CRC Hospital\nRaja Permaisuri Bainun",
-    "CRC Hospital\nTaiping",
-    "CRC Hospital\nSeri Manjung",
-    "PGMES",
-    "JKN Perak",
-    ];
+const ORGANIZERS = [
+  { 
+    name: "CRC Hospital Raja Permaisuri Bainun", 
+    logo: logoCRC // Using the main CRC logo
+  },
+  { 
+    name: "CRC Hospital Taiping", 
+    logo: logoCRC // reusing the same logo
+  },
+  { 
+    name: "CRC Hospital Seri Manjung", 
+    logo: logoCRC // reusing the same logo
+  },
+  { 
+    name: "PGMES", 
+    logo: logoPGMES 
+  },
+  { 
+    name: "JKN Perak", 
+    logo: logoJKN 
+  },
+];
 
 // --- Sub-Components ---
 
@@ -334,20 +352,31 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Organizers */}
-<section className="py-16 bg-white border-t border-slate-100">
+      {/* Organizers Section */}
+<section className="py-20 bg-white border-t border-slate-100">
   <div className="max-w-7xl mx-auto px-4 text-center">
-    <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Co-Organised By</p>
+    <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-12">
+      Co-Organised By
+    </p>
     
-    {/* Added 'items-stretch' to the grid container */}
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-center items-stretch">
-      {ORGANIZER_NAMES.map((name, index) => (
-          // Added 'flex-col', 'h-full' and 'justify-center' to the item container
-          <div key={index} className="flex flex-col items-center justify-center h-full px-4 py-2 bg-slate-50/50 rounded-lg">
-                <div className="font-bold text-base text-slate-700 whitespace-pre-line leading-tight">
-                  {name}
-              </div>
-          </div>
+    <div className="flex flex-wrap justify-center gap-8 md:gap-12 items-center">
+      {ORGANIZERS.map((org, index) => (
+        <div 
+          key={index} 
+          className="group relative flex items-center justify-center p-4"
+        >
+          {/* Logo Image */}
+          <img 
+            src={org.logo} 
+            alt={org.name} 
+            className="h-16 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+          />
+          
+          {/* Tooltip (optional, helps clarify which CRC is which since they share a logo) */}
+          <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded whitespace-nowrap pointer-events-none">
+            {org.name}
+          </span>
+        </div>
       ))}
     </div>
   </div>
