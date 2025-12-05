@@ -19,16 +19,8 @@ const ROTATING_IMAGES = [
 
 const ORGANIZERS = [
   { 
-    name: "CRC Hospital Raja Permaisuri Bainun", 
-    logo: logoCRC // Using the main CRC logo
-  },
-  { 
-    name: "CRC Hospital Taiping", 
-    logo: logoCRC // reusing the same logo
-  },
-  { 
-    name: "CRC Hospital Seri Manjung", 
-    logo: logoCRC // reusing the same logo
+    name: "CRC", 
+    logo: logoCRC 
   },
   { 
     name: "PGMES", 
@@ -359,21 +351,21 @@ const Home: React.FC = () => {
       Co-Organised By
     </p>
     
-    <div className="flex flex-wrap justify-center gap-8 md:gap-12 items-center">
+    <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
       {ORGANIZERS.map((org, index) => (
         <div 
           key={index} 
           className="group relative flex items-center justify-center p-4"
         >
-          {/* Logo Image */}
+          {/* Logo Image - UPDATED CLASSNAME */}
           <img 
             src={org.logo} 
             alt={org.name} 
-            className="h-16 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+            className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
           />
           
-          {/* Tooltip (optional, helps clarify which CRC is which since they share a logo) */}
-          <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded whitespace-nowrap pointer-events-none">
+          {/* Tooltip */}
+          <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200 pointer-events-none whitespace-nowrap z-20">
             {org.name}
           </span>
         </div>
