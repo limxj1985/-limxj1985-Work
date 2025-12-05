@@ -28,13 +28,13 @@ const ORGANIZERS = [
     name: "PGMES", 
     logo: logoPGMES,
     // PGMES might be wider, so we allow it to be taller (h-16)
-    sizeClass: "h-16 md:h-24" 
+    sizeClass: "h-18 md:h-24" 
   },
   { 
     name: "JKN Perak", 
     logo: logoJKN,
     // Standard size
-    sizeClass: "h-16 md:h-24" 
+    sizeClass: "h-18 md:h-24" 
   },
 ];
 
