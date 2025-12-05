@@ -22,7 +22,7 @@ const ORGANIZERS = [
     name: "CRC", 
     logo: logoCRC,
     // CRC is likely square, so we make it smaller (h-14) to match the others visually
-    sizeClass: "h-14 md:h-20" 
+    sizeClass: "h-10 md:h-20" 
   },
   { 
     name: "PGMES", 
