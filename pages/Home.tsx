@@ -94,8 +94,8 @@ const CountdownTimer = () => {
 
     const calculateTimeLeft = () => {
         // --- IMPORTANT: FIX ---
-        // Changed date format from '2026-9-9' to '2026-09-09' for cross-browser compatibility.
-        const targetDate = new Date('2026-09-09T08:00:00'); 
+        // Changed date format from '2026-9-30' to '2026-09-30' for cross-browser compatibility.
+        const targetDate = new Date('2026-09-30T08:00:00'); 
 
         const now = new Date();
         // Ensure we don't get NaN if date parsing fails
