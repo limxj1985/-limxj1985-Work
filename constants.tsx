@@ -1,7 +1,7 @@
 import { AgendaItem, NavItem } from './types';
 import React from 'react';
 
-export const CONFERENCE_DATE = "Wednesday, 9 September 2026";
+export const CONFERENCE_DATE = "Wednesday, 30 September 2026";
 export const CONFERENCE_TIME = "8.00 AM - 5.00 PM";
 export const CONFERENCE_VENUE = "Auditorium, Level 4, Ambulatory Care Centre, Hospital Raja Permaisuri Bainun";
 export const REGISTRATION_LINK = "https://forms.gle/kh2gB8AaHnTpxi5b9";
