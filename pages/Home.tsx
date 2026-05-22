@@ -229,7 +229,7 @@ const Home: React.FC = () => {
             {/* Card 1 */}
             <InfoCard Icon={Calendar} title="Date & Time" theme="lime">
                 <p>{CONFERENCE_DATE}</p>
-                <p className="text-slate-500 text-sm mt-1">8.00 AM - 5.00 PM</p>
+                <p className="text-slate-500 text-sm mt-1">8.00 AM - 1.00 PM</p>
             </InfoCard>
 
             {/* Card 2 */}
