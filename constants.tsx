@@ -67,7 +67,7 @@ export const AGENDA_DATA: AgendaItem[] = [
   },
   { 
     time: "11:35 - 12:00", 
-    title: "CRC Research Achievements 2026", 
+    title: "CRC Research Presentations 2026", 
     location: "Auditorium",
     type: "session",
     details: [
