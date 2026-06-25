@@ -1,9 +1,9 @@
 import React from 'react';
 import { Mic2, User } from 'lucide-react';
 
-// Importing local images from your project structure
-import RukmanPhoto from './assets/69017.jpg';
-import AshaPhoto from './assets/69018.jpg';
+// Fixed relative paths: Go up out of 'pages', then into 'components/assets'
+import RukmanPhoto from '../components/assets/69017.jpg';
+import AshaPhoto from '../components/assets/69018.jpg';
 
 interface Speaker {
   name: string;
@@ -12,7 +12,6 @@ interface Speaker {
 }
 
 const Speakers: React.FC = () => {
-  // Speaker data extracted from the official PRC 2026 agenda
   const speakers: Speaker[] = [
     {
       name: "PROF. DR. RUKMAN BIN AWANG HAMAT",
