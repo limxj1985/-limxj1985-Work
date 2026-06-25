@@ -1,9 +1,9 @@
 import { AgendaItem, NavItem } from './types';
 import React from 'react';
 
-export const CONFERENCE_DATE = "Wednesday, 30 September 2026";
-export const CONFERENCE_TIME = "0800 - 1300";
-export const CONFERENCE_VENUE = "Auditorium, Level 4, Ambulatory Care Centre, Hospital Raja Permaisuri Bainun";
+export const CONFERENCE_DATE = "Wednesday, 30 September 2026"; [cite: 3]
+export const CONFERENCE_TIME = "0800 - 1300"; [cite: 4]
+export const CONFERENCE_VENUE = "Auditorium, Level 4, Ambulatory Care Centre, Hospital Raja Permaisuri Bainun"; [cite: 5]
 export const REGISTRATION_LINK = "https://forms.gle/kh2gB8AaHnTpxi5b9";
 export const ABSTRACT_SUBMISSION_LINK = "https://forms.gle/5HjCutv7tKikJEKd9";
 export const ABSTRACT_TEMPLATE_LINK = "https://docs.google.com/document/d/1X22ZpyxWKCvzyL6RlIoYXSRloC3Sgu0usITxAgYQnH8/edit?tab=t.0";
@@ -22,49 +22,82 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const AGENDA_DATA: AgendaItem[] = [
-  { time: "7:30 - 8:30", title: "Registration & Arrival of VIPs", location: "Auditorium", type: "general" },
   { 
-    time: "8:30 - 9:10", 
-    title: "Opening Ceremony of PRC 2026", 
-    location: "Auditorium", 
+    time: "07:30 - 08:00", 
+    title: "Registration", 
+    location: "ACC, Level 4", [cite: 2]
+    type: "general" 
+  },
+  { 
+    time: "08:00 - 09:00", 
+    title: "Opening Ceremony", 
+    location: "Auditorium", [cite: 2]
     type: "general",
     details: [
-      "National Anthem 'Negaraku'",
-      "Doa Recital",
-      "Welcoming Speech",
-      "Address by the Perak State Health Director",
-      "Officiating Speech"
+      "National Anthem 'Negaraku', HRPB & KKM Songs", [cite: 2]
+      "Doa Recital", [cite: 2]
+      "Welcoming Speech by Dr. Fakhruddin Bin Amran (Director of HRPB)", [cite: 2]
+      "Officiating Speech by Dato' Dr. Feisul Idzwan Mustapha (Director of JKN Perak)", [cite: 2]
+      "PRC 2026 Officiating Launch Gimmick", [cite: 2]
+      "Photography Session" [cite: 2]
     ]
   },
-  { time: "9:10 - 9:30", title: "Keynote Address", location: "Auditorium", type: "keynote" },
-  { time: "9:30 - 9:50", title: "Tea Break / Poster Viewing / Booth Visiting", location: "Foyer", type: "break" },
-  { time: "9:50 - 10:15", title: "Plenary 1", location: "Auditorium", type: "session" },
-  { time: "10:15 - 10:40", title: "Plenary 2", location: "Auditorium", type: "session" },
-  { time: "10:40 - 11:05", title: "Plenary 3", location: "Auditorium", type: "session" },
-  { time: "11:05 - 11:30", title: "Plenary 4", location: "Auditorium", type: "session" },
-  { time: "11:30 - 11:55", title: "CRM Sharing", location: "Auditorium", type: "session" },
-  { time: "11:55 - 13:00", title: "Oral Presentation: Presenter No. 1-3", location: "Auditorium", type: "session" },
   { 
-    time: "13:00 - 14:30", 
-    title: "Lunch Break & Breakout Sessions", 
-    location: "Foyer / Seminar Rooms", 
-    type: "break",
+    time: "09:00 - 09:20", 
+    title: "Morning Tea Break / Booth & Poster Exhibition", 
+    location: "Auditorium / Foyer Level 4", [cite: 2]
+    type: "break" 
+  },
+  { 
+    time: "09:20 - 10:20", 
+    title: "Plenary Sessions", 
+    location: "Auditorium", [cite: 2]
+    type: "session",
     details: [
-      "13:10 - 13:40: Lunch Talk (Seminar Room 1)",
-      "13:45 - 14:15: Lunch Talk (Seminar Room 2)",
-      "Concurrent Poster Viewing and Booth Visiting"
-    ] 
+      "Plenary 1: Prof. Dr. Rukman Bin Awang Hamat", [cite: 2]
+      "Plenary 2: Prof. Datin Dr. Sarinder Kaur Dhillon", [cite: 2]
+      "Plenary 3: Ms. Asha Thanabalan" [cite: 2]
+    ]
   },
-  { time: "14:30 - 16:30", title: "Oral Presentation: Presenter No. 4-10", location: "Auditorium", type: "session" },
-  { time: "16:30 - 16:50", title: "Quiz & Lucky Draw", location: "Auditorium", type: "general" },
   { 
-    time: "16:50 - 17:20", 
-    title: "Prize Giving Ceremony", 
-    location: "Auditorium", 
-    type: "general",
-    details: ["Poster Presentation Awards", "Best Case Report", "Oral Presentation Awards"]
+    time: "10:20 - 11:35", 
+    title: "Oral Presentations 1-5 & Concurrent Poster Evaluation", 
+    location: "Auditorium / Foyer Level 4", [cite: 2]
+    type: "session" 
   },
-  { time: "17:20 - 17:30", title: "Closing Remarks", location: "Auditorium", type: "general" },
+  { 
+    time: "11:35 - 12:00", 
+    title: "CRC Research Achievements 2026", 
+    location: "Auditorium", [cite: 2]
+    type: "session",
+    details: [
+      "Presentation 1: CRC HRPB", [cite: 2]
+      "Presentation 2: CRC Manjung", [cite: 2]
+      "Presentation 3: CRC Taiping" [cite: 2]
+    ]
+  },
+  { 
+    time: "12:00 - 12:45", 
+    title: "Prize Giving Ceremony", 
+    location: "Auditorium", [cite: 2]
+    type: "general",
+    details: [
+      "Chief Judge's Review", [cite: 2]
+      "Presentation of Appreciation Tokens (Invited Speakers & Judges)", [cite: 2]
+      "Oral Presentation Awards", [cite: 2]
+      "Poster Presentation Awards", [cite: 2]
+      "CRC Research Award 2026" [cite: 2]
+    ]
+  },
+  { 
+    time: "12:45 - 13:00", 
+    title: "Closing Remarks", 
+    location: "Auditorium", [cite: 2]
+    type: "general",
+    details: [
+      "Closing Speech by Dato' Dr. Philip Rajan Devesahayam (Organizing Chairman)" [cite: 2]
+    ]
+  },
 ];
 
 export const THEME_COLORS = {
