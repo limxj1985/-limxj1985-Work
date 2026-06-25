@@ -61,7 +61,7 @@ export const AGENDA_DATA: AgendaItem[] = [
   },
   { 
     time: "10:20 - 11:35", 
-    title: "Oral Presentations 1-5 & Concurrent Poster Evaluation", 
+    title: "Oral Presentations (5)  & Concurrent Poster Evaluation", 
     location: "Auditorium / Foyer Level 4",
     type: "session" 
   },
