@@ -2,33 +2,32 @@ import React from 'react';
 import { Mic2, User } from 'lucide-react';
 
 // Importing local images from your project structure
-// Replace these paths with the actual relative paths to your image assets
 import RukmanPhoto from './assets/69017.jpg';
 import AshaPhoto from './assets/69018.jpg';
 
 interface Speaker {
   name: string;
   role: string;
-  image: string; // Updated type to accept any valid image format
+  image: string; 
 }
 
 const Speakers: React.FC = () => {
-  // Speaker data extracted from the official PRC 2026 agenda [cite: 2]
+  // Speaker data extracted from the official PRC 2026 agenda
   const speakers: Speaker[] = [
     {
-      name: "PROF. DR. RUKMAN BIN AWANG HAMAT", [cite: 2]
-      role: "Plenary 1 Speaker", [cite: 2]
-      image: RukmanPhoto, // Associated with 69017.jpg
+      name: "PROF. DR. RUKMAN BIN AWANG HAMAT",
+      role: "Plenary 1 Speaker",
+      image: RukmanPhoto, 
     },
     {
-      name: "PROF. DATIN DR. SARINDER KAUR DHILLON", [cite: 2]
-      role: "Plenary 2 Speaker", [cite: 2]
-      image: "", // Insert photo path for Prof. Sarinder if available
+      name: "PROF. DATIN DR. SARINDER KAUR DHILLON",
+      role: "Plenary 2 Speaker",
+      image: "", 
     },
     {
-      name: "MS. ASHA THANABALAN", [cite: 2]
-      role: "Plenary 3 Speaker", [cite: 2]
-      image: AshaPhoto, // Associated with 69018.jpg
+      name: "MS. ASHA THANABALAN",
+      role: "Plenary 3 Speaker",
+      image: AshaPhoto, 
     },
   ];
 
@@ -43,7 +42,7 @@ const Speakers: React.FC = () => {
         {/* Title */}
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Our Featured Speakers</h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-16">
-          Meet the distinguished plenary speakers sharing their expertise at the Perak Annual Medical Research Conference 2026[cite: 2].
+          Meet the distinguished plenary speakers sharing their expertise at the Perak Annual Medical Research Conference 2026.
         </p>
 
         {/* Speakers Grid */}
@@ -58,10 +57,9 @@ const Speakers: React.FC = () => {
                 {speaker.image ? (
                   <img 
                     src={speaker.image} 
-                    alt={speaker.name} [cite: 2]
+                    alt={speaker.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      // Fallback if image doesn't exist yet
                       e.currentTarget.style.display = 'none';
                       const fallbackIcon = e.currentTarget.parentElement?.querySelector('.fallback-icon');
                       if (fallbackIcon) fallbackIcon.classList.remove('hidden');
@@ -82,10 +80,10 @@ const Speakers: React.FC = () => {
 
               {/* Speaker Details */}
               <h3 className="text-lg font-bold text-slate-900 text-center mb-1 line-clamp-2">
-                {speaker.name} [cite: 2]
+                {speaker.name}
               </h3>
               <p className="text-sm font-semibold text-lime-600 uppercase tracking-wider">
-                {speaker.role} [cite: 2]
+                {speaker.role}
               </p>
             </div>
           ))}
