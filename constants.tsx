@@ -44,7 +44,7 @@ export const AGENDA_DATA: AgendaItem[] = [
   },
   { 
     time: "09:00 - 09:20", 
-    title: "Morning Tea Break / Booth & Poster Exhibition", 
+    title: "Morning Tea Break / Poster Exhibition", 
     location: "Auditorium / Foyer Level 4",
     type: "break" 
   },
