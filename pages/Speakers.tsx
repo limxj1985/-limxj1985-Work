@@ -1,9 +1,10 @@
 import React from 'react';
 import { Mic2, User } from 'lucide-react';
 
-// Fixed relative paths: Go up out of 'pages', then into 'components/assets'
+// Importing local images from your project structure
 import RukmanPhoto from '../components/assets/69017.jpg';
 import AshaPhoto from '../components/assets/69018.jpg';
+import SarinderPhoto from '../components/assets/Screenshot 2026-06-25 161644.png';
 
 interface Speaker {
   name: string;
@@ -21,7 +22,7 @@ const Speakers: React.FC = () => {
     {
       name: "PROF. DATIN DR. SARINDER KAUR DHILLON",
       role: "Plenary 2 Speaker",
-      image: "", 
+      image: SarinderPhoto, 
     },
     {
       name: "MS. ASHA THANABALAN",
