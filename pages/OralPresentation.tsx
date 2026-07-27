@@ -10,9 +10,9 @@ interface OralAbstract {
   fileUrl: string;
   summary: {
     objective: string;
-    methods: string;
-    results: string;
-    conclusion: string;
+    methods?: string;
+    results?: string;
+    conclusion?: string;
   };
 }
 
@@ -21,70 +21,72 @@ const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
     id: '1',
     abstractNo: 'Abstract 003',
     title: 'Artificial Intelligence Adoption in Pharmacy Practice: Knowledge, Attitude and Practice of Malaysian Pharmacists',
-    authors: ['Yew K. M.', 'Pharmacy Research Team'],
+    authors: [
+      'Chee Tao Chang', 'Xin Jie Lim', 'Jason Choong Yin Lee', 'Chii Chi Chew', 
+      'Yen Jun Wong', 'Huan Keat Chan', 'Chern Choong Thum', 'Kar Meng Yew', 
+      'Shiau Hueh Yeow', 'Philip Rajan'
+    ],
     category: 'Pharmacy & Digital Health',
     fileUrl: '/abstracts/v2_003 OR KAP Pharmacist AI YEW KM.docx',
     summary: {
-      objective: 'To evaluate the Knowledge, Attitude, and Practice (KAP) regarding Artificial Intelligence (AI) adoption among Malaysian pharmacists.',
-      methods: 'A cross-sectional study conducted using a validated structured questionnaire distributed to clinical and hospital pharmacists.',
-      results: 'Assessed baseline readiness, perceived clinical utility, and educational gaps in implementing AI tools in hospital pharmacy practice.',
-      conclusion: 'Recommends targeted AI literacy training modules to foster safe and effective digital adoption in pharmacy practice.'
+      objective: 'To assess the baseline knowledge, attitudes, and practices (KAP) of Malaysian pharmacists toward AI adoption in pharmacy practice and identify factors associated with these domains.'
     }
   },
   {
     id: '2',
     abstractNo: 'Abstract 006',
-    title: 'Impact of Meropenem De-escalation Protocol in Intensive Care Units',
-    authors: ['Antimicrobial Stewardship Team'],
+    title: 'A Multicentre Study on De-escalation of Empirical Meropenem Therapy and the Clinical Outcomes (DEMECO)',
+    authors: [
+      'Ling Siew Hong', 'Cheah Meng Fei', 'Yean Yi Lyn', 'Lim Kim Khee', 
+      'Nurul Aqidah Adnan', 'Chiew Shoen Chuen'
+    ],
     category: 'Infectious Disease & Antimicrobial Stewardship',
     fileUrl: '/abstracts/V2_006~1.DOC',
     summary: {
-      objective: 'To evaluate clinical outcomes and duration of therapy following Meropenem de-escalation in ICU settings.',
-      methods: 'A retrospective study analyzing ICU patient records undergoing broad-spectrum carbapenem therapy.',
-      results: 'Timely de-escalation significantly reduced carbapenem treatment duration without compromising 30-day clinical success.',
-      conclusion: 'Structured antimicrobial stewardship de-escalation protocols effectively optimize carbapenem utilization in critical care.'
+      objective: 'This study evaluated the rate of meropenem de-escalation in Perak hospitals and examined treatment characteristics, multidrug-resistant organisms (MDROs), predictors of de-escalation and clinical outcomes.'
     }
   },
   {
     id: '3',
     abstractNo: 'Abstract 016',
-    title: 'Prevalence and Specificity of Unexpected Red Blood Cell Antibodies in Transfused Patients',
-    authors: ['Blood Bank & Transfusion Team'],
+    title: 'Prevalence, Sociodemographic Patterns, and Clinical Distribution of Probable Anti-Mia Red Blood Cell Antibodies: A Retrospective Multi-Center Study in Peninsular Malaysia',
+    authors: [
+      'Nur Hanisah HAMDAN', 'Pei Pei TAN', 'Sabariah MOHD NOOR', 'Nurul Izzati MOHD FOHAD', 
+      'Salman MOHD SAHID', 'Nor Amiza MAT AMIN', 'Chii-Chii CHEW'
+    ],
     category: 'Hematology & Transfusion Medicine',
     fileUrl: '/abstracts/v2_016_RBC anti MIA.docx',
     summary: {
-      objective: 'To determine the incidence and specificity of red blood cell (RBC) alloantibodies (including Anti-Mi(a)) among transfused patients.',
-      methods: 'Cross-sectional study utilizing standard antibody screening and identification panels during pre-transfusion testing.',
-      results: 'Identified major alloantibody patterns dominated by Rh system antibodies (Anti-E) and anti-Mi(a).',
-      conclusion: 'Emphasizes extended blood antigen matching prior to transfusion to mitigate alloimmunization risks in high-risk patients.'
+      objective: 'This study aimed to analyze the prevalence, sociodemographic characteristics, and clinical distribution of patients possessing probable Anti-Mia antibodies across four major tertiary referral hospitals in Peninsular Malaysia.'
     }
   },
   {
     id: '4',
     abstractNo: 'Abstract 023',
     title: 'Audit on Surgical Antibiotic Prophylaxis (SAP) Adherence in Surgical-based Departments in a Tertiary-Centred Hospital in Malaysia: Pre- and Post-Interventions',
-    authors: ['Surgical Audit Team'],
+    authors: [
+      'Kwek Lih Ling', 'Ros Sakinah binti Kamaludin', 'Cheah Meng Fei', 
+      'Ang Ju Ying', 'Ker Hong Bee', 'Marsilla Mariaty Marzukie'
+    ],
     category: 'Surgery & Clinical Audit',
     fileUrl: '/abstracts/v2_023_surgical antibiotcs prophylaxis audit.docx',
     summary: {
-      objective: 'To evaluate adherence to Surgical Antibiotic Prophylaxis (SAP) guidelines across surgical-based departments before and after targeted interventions.',
-      methods: 'A pre- and post-intervention clinical audit assessing SAP indication, timing of administration, drug choice, and duration of prophylaxis.',
-      results: 'Demonstrated significant improvements in protocol compliance, particularly regarding timely preoperative administration and optimal duration.',
-      conclusion: 'Targeted clinical interventions and feedback routines substantially enhanced SAP adherence, promoting better antimicrobial stewardship.'
+      objective: 'This study aimed to identify and improve SAP adherence across three surgical-based departments to optimize antibiotic use and enhance patient safety.'
     }
   },
   {
     id: '5',
     abstractNo: 'Abstract 026',
-    title: 'Knowledge, Attitude, and Practice (KAP) of Parents Regarding Oral Liquid Medication Administration',
-    authors: ['SC Chiew', 'Pediatric Pharmacy Team'],
+    title: 'Assessment of Knowledge and Practice of Caretakers of Paediatric Patients on the Use and Storage of Oral Liquid Medications: A Multi-Centre Study',
+    authors: [
+      'Nurul Nadia Binti Jaafar Sah', 'Siti Noradila Binti Samsudin', 
+      'Nor Aimi Liyana Binti Othman', 'Najwa Izzati Binti Mohamed', 
+      'Nor Zuraida Binti Abdul Wahab', 'Chiew Shoen Chuen'
+    ],
     category: 'Pediatrics & Patient Safety',
     fileUrl: '/abstracts/v2_026 KAP oral liquid parents SC Chiew.docx',
     summary: {
-      objective: 'To evaluate parental dosing accuracy, knowledge, and practice regarding pediatric oral liquid medications.',
-      methods: 'Questionnaire survey combined with a practical measurement demonstration among pediatric outpatient caregivers.',
-      results: 'Revealed common dosing measurement errors linked to kitchen spoon use vs. standard oral syringes.',
-      conclusion: 'Recommends mandatory oral syringe distribution and visual counseling aids at pediatric outpatient dispensaries.'
+      objective: 'This study aimed to determine the extent of knowledge and practice of caretakers of paediatric patients on the use and storage of oral liquid medications.'
     }
   }
 ];
@@ -181,18 +183,24 @@ export const OralPresentation: React.FC = () => {
                         <strong className="text-gray-900 block font-semibold">Objective:</strong>
                         <p className="text-gray-600">{abstract.summary.objective}</p>
                       </div>
-                      <div>
-                        <strong className="text-gray-900 block font-semibold">Methodology:</strong>
-                        <p className="text-gray-600">{abstract.summary.methods}</p>
-                      </div>
-                      <div>
-                        <strong className="text-gray-900 block font-semibold">Results:</strong>
-                        <p className="text-gray-600">{abstract.summary.results}</p>
-                      </div>
-                      <div>
-                        <strong className="text-gray-900 block font-semibold">Conclusion:</strong>
-                        <p className="text-gray-600">{abstract.summary.conclusion}</p>
-                      </div>
+                      {abstract.summary.methods && (
+                        <div>
+                          <strong className="text-gray-900 block font-semibold">Methodology:</strong>
+                          <p className="text-gray-600">{abstract.summary.methods}</p>
+                        </div>
+                      )}
+                      {abstract.summary.results && (
+                        <div>
+                          <strong className="text-gray-900 block font-semibold">Results:</strong>
+                          <p className="text-gray-600">{abstract.summary.results}</p>
+                        </div>
+                      )}
+                      {abstract.summary.conclusion && (
+                        <div>
+                          <strong className="text-gray-900 block font-semibold">Conclusion:</strong>
+                          <p className="text-gray-600">{abstract.summary.conclusion}</p>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
