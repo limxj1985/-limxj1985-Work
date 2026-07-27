@@ -1,3 +1,21 @@
+import React, { useState } from 'react';
+import { FileText, Download, Award, Search } from 'lucide-react';
+
+interface OralAbstract {
+  id: string;
+  abstractNo: string;
+  title: string;
+  authors: string[];
+  category: string;
+  fileUrl: string;
+  summary: {
+    objective: string;
+    methods: string;
+    results: string;
+    conclusion: string;
+  };
+}
+
 const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
   {
     id: '1',
@@ -70,3 +88,129 @@ const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
     }
   }
 ];
+
+export const OralPresentation: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedAbstract, setSelectedAbstract] = useState<string | null>(null);
+
+  const filteredAbstracts = TOP_ORAL_ABSTRACTS.filter(item => 
+    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.abstractNo.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.authors.some(a => a.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto space-y-8">
+        
+        {/* Header */}
+        <div className="text-center space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-sm font-semibold">
+            <Award className="w-4 h-4" /> Final Top 5 Selected
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+            Oral Presentation Abstracts
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Top 5 selected research abstract submissions for the Perak Annual Medical Research Conference 2026.
+          </p>
+        </div>
+
+        {/* Search */}
+        <div className="max-w-md mx-auto relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Search by abstract #, title, or author..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
+          />
+        </div>
+
+        {/* Abstract List */}
+        <div className="space-y-6">
+          {filteredAbstracts.map((abstract) => {
+            const isExpanded = selectedAbstract === abstract.id;
+            return (
+              <div 
+                key={abstract.id}
+                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition duration-200"
+              >
+                <div className="p-6 space-y-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gray-100 pb-3">
+                    <div className="flex items-center gap-3">
+                      <span className="px-3 py-1 bg-lime-500 text-white font-bold text-xs rounded-md uppercase tracking-wider">
+                        {abstract.abstractNo}
+                      </span>
+                      <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2.5 py-1 rounded-md">
+                        {abstract.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+                      {abstract.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-1">
+                      <span className="font-medium text-gray-700">Authors:</span> {abstract.authors.join(', ')}
+                    </p>
+                  </div>
+
+                  <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
+                    <button
+                      onClick={() => setSelectedAbstract(isExpanded ? null : abstract.id)}
+                      className="text-xs font-semibold text-lime-700 hover:text-lime-800 flex items-center gap-1 focus:outline-none"
+                    >
+                      {isExpanded ? 'Hide Details ▲' : 'Read Abstract Details ▼'}
+                    </button>
+
+                    <a
+                      href={abstract.fileUrl}
+                      download
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition"
+                    >
+                      <Download className="w-3.5 h-3.5" /> Download Document
+                    </a>
+                  </div>
+
+                  {isExpanded && (
+                    <div className="mt-4 pt-4 border-t border-gray-100 bg-gray-50 rounded-lg p-4 space-y-3 text-sm text-gray-700 animate-fadeIn">
+                      <div>
+                        <strong className="text-gray-900 block font-semibold">Objective:</strong>
+                        <p className="text-gray-600">{abstract.summary.objective}</p>
+                      </div>
+                      <div>
+                        <strong className="text-gray-900 block font-semibold">Methodology:</strong>
+                        <p className="text-gray-600">{abstract.summary.methods}</p>
+                      </div>
+                      <div>
+                        <strong className="text-gray-900 block font-semibold">Results:</strong>
+                        <p className="text-gray-600">{abstract.summary.results}</p>
+                      </div>
+                      <div>
+                        <strong className="text-gray-900 block font-semibold">Conclusion:</strong>
+                        <p className="text-gray-600">{abstract.summary.conclusion}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+
+          {filteredAbstracts.length === 0 && (
+            <div className="text-center py-12 bg-white rounded-xl border border-dashed border-gray-300">
+              <FileText className="w-10 h-10 text-gray-400 mx-auto mb-2" />
+              <p className="text-gray-500 font-medium">No abstracts found matching your search.</p>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default OralPresentation;
