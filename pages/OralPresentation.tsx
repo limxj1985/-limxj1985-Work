@@ -6,7 +6,6 @@ interface OralAbstract {
   abstractNo: string;
   title: string;
   authors: string[];
-  category: string;
   fileUrl: string;
   summary: {
     objective: string;
@@ -139,9 +138,6 @@ export const OralPresentation: React.FC = () => {
                     <div className="flex items-center gap-3">
                       <span className="px-3 py-1 bg-lime-500 text-white font-bold text-xs rounded-md uppercase tracking-wider">
                         {abstract.abstractNo}
-                      </span>
-                      <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2.5 py-1 rounded-md">
-                        {abstract.category}
                       </span>
                     </div>
                   </div>
