@@ -26,7 +26,6 @@ const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
       'Yen Jun Wong', 'Huan Keat Chan', 'Chern Choong Thum', 'Kar Meng Yew', 
       'Shiau Hueh Yeow', 'Philip Rajan'
     ],
-    category: 'Pharmacy & Digital Health',
     fileUrl: '/abstracts/v2_003 OR KAP Pharmacist AI YEW KM.docx',
     summary: {
       objective: 'To assess the baseline knowledge, attitudes, and practices (KAP) of Malaysian pharmacists toward AI adoption in pharmacy practice and identify factors associated with these domains.'
@@ -40,7 +39,6 @@ const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
       'Ling Siew Hong', 'Cheah Meng Fei', 'Yean Yi Lyn', 'Lim Kim Khee', 
       'Nurul Aqidah Adnan', 'Chiew Shoen Chuen'
     ],
-    category: 'Infectious Disease & Antimicrobial Stewardship',
     fileUrl: '/abstracts/V2_006~1.DOC',
     summary: {
       objective: 'This study evaluated the rate of meropenem de-escalation in Perak hospitals and examined treatment characteristics, multidrug-resistant organisms (MDROs), predictors of de-escalation and clinical outcomes.'
@@ -54,7 +52,6 @@ const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
       'Nur Hanisah HAMDAN', 'Pei Pei TAN', 'Sabariah MOHD NOOR', 'Nurul Izzati MOHD FOHAD', 
       'Salman MOHD SAHID', 'Nor Amiza MAT AMIN', 'Chii-Chii CHEW'
     ],
-    category: 'Hematology & Transfusion Medicine',
     fileUrl: '/abstracts/v2_016_RBC anti MIA.docx',
     summary: {
       objective: 'This study aimed to analyze the prevalence, sociodemographic characteristics, and clinical distribution of patients possessing probable Anti-Mia antibodies across four major tertiary referral hospitals in Peninsular Malaysia.'
@@ -68,7 +65,6 @@ const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
       'Kwek Lih Ling', 'Ros Sakinah binti Kamaludin', 'Cheah Meng Fei', 
       'Ang Ju Ying', 'Ker Hong Bee', 'Marsilla Mariaty Marzukie'
     ],
-    category: 'Surgery & Clinical Audit',
     fileUrl: '/abstracts/v2_023_surgical antibiotcs prophylaxis audit.docx',
     summary: {
       objective: 'This study aimed to identify and improve SAP adherence across three surgical-based departments to optimize antibiotic use and enhance patient safety.'
@@ -83,7 +79,6 @@ const TOP_ORAL_ABSTRACTS: OralAbstract[] = [
       'Nor Aimi Liyana Binti Othman', 'Najwa Izzati Binti Mohamed', 
       'Nor Zuraida Binti Abdul Wahab', 'Chiew Shoen Chuen'
     ],
-    category: 'Pediatrics & Patient Safety',
     fileUrl: '/abstracts/v2_026 KAP oral liquid parents SC Chiew.docx',
     summary: {
       objective: 'This study aimed to determine the extent of knowledge and practice of caretakers of paediatric patients on the use and storage of oral liquid medications.'
