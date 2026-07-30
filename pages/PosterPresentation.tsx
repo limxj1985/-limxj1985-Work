@@ -23,7 +23,7 @@ const posterList: AbstractItem[] = [
   { 
     id: '004', 
     filename: 'v2_004_OR vaccine hesitancy zatil.docx',
-    title: 'CHARACTERISTICS OF VACCINE HESITANCY AMONG PARENTS IN HILIR PERAK DISTRICT (2016-2024)'
+    title: 'Characteristics of Vaccine Hesitancy Among Parents In Hilir Perak District (2016-2024)'
   },
   { 
     id: '005', 
@@ -33,7 +33,7 @@ const posterList: AbstractItem[] = [
   { 
     id: '007', 
     filename: '007V2_~1.DOC',
-    title: 'ASSESSING KNOWLEDGE OF PATIENT EDUCATION AND TREATMENT TOWARDS CLASSICAL SCABIES AMONG HEALTHCARE WORKERS IN KINTA DISTRICT'
+    title: 'Assessing Knowledge of Patient Education and Treatment Towards Classical Scabies Among Healthcare Workers In Kinta District'
   },
   { 
     id: '008', 
@@ -78,7 +78,7 @@ const posterList: AbstractItem[] = [
   { 
     id: '019', 
     filename: '019 v2_abstract crc ipoh.docx_ editted.docx',
-    title: 'EFFECTIVENESS OF AQUATIC LAND EXERCISE ON PHYSICAL PERFORMANCE AND PSYCHO-SOCIAL FACTORS AMONG INDIVIDUALS WITH KNEE OSTEOARTHRITIS'
+    title: 'Effectiveness of aquatic land exercise on physical performance and psycho-social factors among individuals with knee osteoarthritis'
   },
   { 
     id: '020', 
@@ -110,10 +110,26 @@ const posterList: AbstractItem[] = [
     filename: '027_v2_SANTHYA ABSTRACT CRC.docx',
     title: 'Comparative Effectiveness of Group-Based versus Individual Exercise on Pain and Psychosocial Outcomes in Post-Traumatic Knee Osteoarthritis: A Randomized Controlled Trial'
   },
-  { id: '028', filename: 'v2_028Abstract 28_Santibuana_revised.docx' },
-  { id: '029', filename: '029AZI~1.DOC' },
-  { id: '030', filename: '030 Swiss ball Puvanes Physio Taiping.docx' },
-  { id: '031', filename: '031V2_~1.DOC' }
+  { 
+    id: '028', 
+    filename: 'v2_028Abstract 28_Santibuana_revised.docx',
+    title: 'Prevalence of migraine and its impact on quality of life and academic performance among healthcare students at UNIKL RCMP'
+  },
+  { 
+    id: '029', 
+    filename: '029AZI~1.DOC',
+    title: 'The immediate effects of dry cupping therapy and passive stretching hamstring flexibility among students at UNIKL RCMP'
+  },
+  { 
+    id: '030', 
+    filename: '030 Swiss ball Puvanes Physio Taiping.docx',
+    title: 'The effects of Swiss ball exercise on pain and function in patients with low back pain: A systematic review'
+  },
+  { 
+    id: '031', 
+    filename: '031V2_~1.DOC',
+    title: 'Knowledge, Attitude and Practice of Parents towards Childhood Vaccination in Perak during COVID-19 Endemic Phase (NMRR ID-22-02933-LR-1)'
+  }
 ];
 
 export const PosterPresentation: React.FC = () => {
