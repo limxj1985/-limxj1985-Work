@@ -128,7 +128,7 @@ const posterList: AbstractItem[] = [
   { 
     id: '031', 
     filename: '031V2_~1.DOC',
-    title: 'Knowledge, Attitude and Practice of Parents towards Childhood Vaccination in Perak during COVID-19 Endemic Phase (NMRR ID-22-02933-LR-1)'
+    title: 'Knowledge, Attitude and Practice of Parents towards Childhood Vaccination in Perak during COVID-19 Endemic Phase'
   }
 ];
 
