@@ -10,26 +10,106 @@ interface AbstractItem {
 
 // Complete list of your poster presentation abstracts
 const posterList: AbstractItem[] = [
-  { id: '001', filename: 'V2_001~1.DOC' },
-  { id: '002', filename: 'v2_002 CR endometrial ca alyza yusof.docx' },
-  { id: '004', filename: 'v2_004_OR vaccine hesitancy zatil.docx' },
-  { id: '005', filename: 'v2_IVOS antibiotics switch - Wan.docx' },
-  { id: '007', filename: '007V2_~1.DOC' },
-  { id: '008', filename: '008 v2 Revised (030626) Abstract PRC tan hoo seng.docx' },
-  { id: '009', filename: 'v2 Abstract PRC Jia Sheng Lee revised 009.docx' },
-  { id: '011', filename: 'v2Abstract PRC KAP MTS 011.docx' },
-  { id: '012', filename: 'v2_abstract ravac (Alyza y).docx' },
-  { id: '014', filename: 'v2_014_abstract_Ng Chin Hui.docx' },
-  { id: '015', filename: 'v2_Abstract 015 PPI Ng Chin Hui.docx' },
-  { id: '017', filename: 'V2017K~1.DOC' },
-  { id: '018', filename: 'V2_018~1.DOC' },
-  { id: '019', filename: '019 v2_abstract crc ipoh.docx_ editted.docx' },
-  { id: '020', filename: 'ABSTRA~1.DOC' },
-  { id: '021', filename: 'V2_021~1.DOC' },
-  { id: '022', filename: 'v2_022_accupuncture hypertensio_Kan Kar Yiu.docx' },
-  { id: '024', filename: 'v2_024 Endoscoping Aspergillus Yvonn.docx' },
-  { id: '025', filename: 'v2_025_Breastfeeding practices and maternal health outcomes.docx' },
-  { id: '027', filename: '027_v2_SANTHYA ABSTRACT CRC.docx' },
+  { 
+    id: '001', 
+    filename: 'V2_001~1.DOC',
+    title: 'Healthcare Worker Burnout as a Determinant of Patient Care Quality: A Systematic Review'
+  },
+  { 
+    id: '002', 
+    filename: 'v2_002 CR endometrial ca alyza yusof.docx',
+    title: 'Metastatic Endometrial Cancer Presenting as Suspected Primary Lung Cancer: A Case Study'
+  },
+  { 
+    id: '004', 
+    filename: 'v2_004_OR vaccine hesitancy zatil.docx',
+    title: 'CHARACTERISTICS OF VACCINE HESITANCY AMONG PARENTS IN HILIR PERAK DISTRICT (2016-2024)'
+  },
+  { 
+    id: '005', 
+    filename: 'v2_IVOS antibiotics switch - Wan.docx',
+    title: 'Antibiotic Stewardship Practices in a District Hospital: A Retrospective Study of the IV-to-Oral Switch (IVOS) in Orthopaedic Patients'
+  },
+  { 
+    id: '007', 
+    filename: '007V2_~1.DOC',
+    title: 'ASSESSING KNOWLEDGE OF PATIENT EDUCATION AND TREATMENT TOWARDS CLASSICAL SCABIES AMONG HEALTHCARE WORKERS IN KINTA DISTRICT'
+  },
+  { 
+    id: '008', 
+    filename: '008 v2 Revised (030626) Abstract PRC tan hoo seng.docx',
+    title: 'Budget Impact Analysis of Ferric Derisomaltose for Heart Failure in a Rapidly Aging Regional Population'
+  },
+  { 
+    id: '009', 
+    filename: 'v2 Abstract PRC Jia Sheng Lee revised 009.docx',
+    title: 'Real-World Clinical and Economic Impact of Oral Antidiabetic Drug Optimization for Insulin De-intensification in Type 2 Diabetes: A Retrospective Cohort Study in Malaysian Public Hospital'
+  },
+  { 
+    id: '011', 
+    filename: 'v2Abstract PRC KAP MTS 011.docx',
+    title: 'A cross-sectional Study of Assessing Knowledge, Attitude, and Practice of 5-Level Malaysian Triage Scale 2022 among Emergency Health Care Workers in Malaysia'
+  },
+  { 
+    id: '012', 
+    filename: 'v2_abstract ravac (Alyza y).docx',
+    title: 'Screening Outcomes and Referral Rates of Refractive Error Among Standard One Primary School Children in Hilir Perak Using the Rapid Assessment Visual Acuity Chart (RAVAC)'
+  },
+  { 
+    id: '014', 
+    filename: 'v2_014_abstract_Ng Chin Hui.docx',
+    title: 'Economic Feasibility of Transitioning from Manual to Automated Dispensing Systems (ADS) in a Malaysian State Hospital: A 10-Year Cost-Simulation Analysis'
+  },
+  { 
+    id: '015', 
+    filename: 'v2_Abstract 015 PPI Ng Chin Hui.docx',
+    title: 'Clinical Audit on Proton Pump Inhibitor (PPI) Therapy: Evaluation of Prescribing Trends and Appropriateness of Use in Adults at Hospital Raja Permaisuri Bainun (HRPB), Ipoh.'
+  },
+  { 
+    id: '017', 
+    filename: 'V2017K~1.DOC',
+    title: 'A Study on the Knowledge and Perception of Molar Incisor Hypomineralisation Among Dental Officers in Perak'
+  },
+  { 
+    id: '018', 
+    filename: 'V2_018~1.DOC',
+    title: 'Decoding a Giant Cell-Rich Lesion of the Posterior Mandible: The Role of Clinicopathological Correlation'
+  },
+  { 
+    id: '019', 
+    filename: '019 v2_abstract crc ipoh.docx_ editted.docx',
+    title: 'EFFECTIVENESS OF AQUATIC LAND EXERCISE ON PHYSICAL PERFORMANCE AND PSYCHO-SOCIAL FACTORS AMONG INDIVIDUALS WITH KNEE OSTEOARTHRITIS'
+  },
+  { 
+    id: '020', 
+    filename: 'ABSTRA~1.DOC',
+    title: 'A Pilot Study on the Effect of Educational Intervention on Nurses’ Knowledge towards Insulin Therapy for Diabetes Mellitus'
+  },
+  { 
+    id: '021', 
+    filename: 'V2_021~1.DOC',
+    title: 'Physicochemical, Antioxidant, and Sensory Profiling of Commercial Immunonutritional Milk Supplements'
+  },
+  { 
+    id: '022', 
+    filename: 'v2_022_accupuncture hypertensio_Kan Kar Yiu.docx',
+    title: 'Acupuncture visits Frequency and Its Associations with quality of life, and cardiovascular parameters among hypertension outpatients: A Cross-sectional study'
+  },
+  { 
+    id: '024', 
+    filename: 'v2_024 Endoscoping Aspergillus Yvonn.docx',
+    title: 'Nature’s Endoscopic Surgery: A Case Report of Extensive Multi-Sinus Osteolysis Caused by an Aspergillus niger Fungal Ball'
+  },
+  { 
+    id: '025', 
+    filename: 'v2_025_Breastfeeding practices and maternal health outcomes.docx',
+    title: 'Associations Between Breastfeeding Practices, Nutritional Intake Adequacy, Blood Pressure and Body Mass Index in Postpartum Mothers'
+  },
+  { 
+    id: '027', 
+    filename: '027_v2_SANTHYA ABSTRACT CRC.docx',
+    title: 'Comparative Effectiveness of Group-Based versus Individual Exercise on Pain and Psychosocial Outcomes in Post-Traumatic Knee Osteoarthritis: A Randomized Controlled Trial'
+  },
   { id: '028', filename: 'v2_028Abstract 28_Santibuana_revised.docx' },
   { id: '029', filename: '029AZI~1.DOC' },
   { id: '030', filename: '030 Swiss ball Puvanes Physio Taiping.docx' },
@@ -39,7 +119,7 @@ const posterList: AbstractItem[] = [
 export const PosterPresentation: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter abstracts by ID or filename
+  // Filter abstracts by ID, title, or filename
   const filteredAbstracts = posterList.filter((item) => {
     const term = searchTerm.toLowerCase();
     return (
