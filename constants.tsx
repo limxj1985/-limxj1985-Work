@@ -16,7 +16,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Speakers', path: '/speakers' },
   { label: 'Oral Presentation', path: '/oral-presentation' },
   { label: 'Poster Presentation', path: '/poster-presentation' },
-  { label: 'Registration', path: '/registration' },
+  { label: 'Feedback & E-cert', path: '/registration' },
 ];
 
 export const AGENDA_DATA: AgendaItem[] = [
