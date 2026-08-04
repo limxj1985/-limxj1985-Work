@@ -196,7 +196,7 @@ const Home: React.FC = () => {
               rel="noreferrer noopener"
               className="px-8 py-4 bg-pink-500 text-white rounded-full font-bold text-lg shadow-lg shadow-pink-500/20 hover:bg-pink-600 hover:shadow-pink-500/40 transition-all transform hover:-translate-y-1 flex items-center gap-2"
             >
-              Register for Free <ArrowRight className="w-5 h-5" />
+              Register for Attendance <ArrowRight className="w-5 h-5" />
             </a>
             <Link
               to="/agenda"
