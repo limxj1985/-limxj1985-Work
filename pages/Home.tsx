@@ -242,23 +242,7 @@ const Home: React.FC = () => {
                 </p>
             </InfoCard>
 
-            {/* Card 3 */}
-            <InfoCard Icon={Clock} title="Important Deadlines" theme="lime">
-              <ul className="text-sm space-y-3">
-                <li className="flex flex-col">
-                  <span className="font-bold text-pink-500 uppercase text-xs tracking-wider">Abstract Submission</span>
-                  <span>12 June 2026</span>
-                </li>
-                <li className="flex flex-col border-t border-slate-100 pt-2">
-                  <span className="font-bold text-lime-600 uppercase text-xs tracking-wider">Registration Close</span>
-                  <span>21 August 2026</span>
-                </li>
-              </ul>
-            </InfoCard>
-          </div>
-        </div>
-      </section>
-
+            
       {/* About Section (with Rotating Images) */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
