@@ -1,75 +1,94 @@
 import React from 'react';
-import { REGISTRATION_LINK } from '../constants';
-import { Ticket, Users, CheckCircle, ExternalLink, Quote } from 'lucide-react';
+import { MessageSquareHeart, Award, ExternalLink, CheckCircle2, FileText } from 'lucide-react';
+
+// Exact HRPB portal links added
+const FEEDBACK_FORM_LINK = 'https://hrpb.moh.gov.my/ecert/q_answer.php?key=Njc5';
+const CERTIFICATE_CLAIM_LINK = 'https://hrpb.moh.gov.my/ecert/muatturun_sijil.php';
 
 const Registration: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center py-20 px-4">
-       
-       <div className="max-w-3xl w-full text-center">
-          <div className="inline-block p-4 rounded-full bg-lime-100 text-lime-600 mb-6">
-             <Ticket className="w-12 h-12" />
-          </div>
+    <div className="min-h-screen bg-slate-50 py-16 lg:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        {/* Top Icon Badge */}
+        <div className="w-20 h-20 mx-auto rounded-full bg-lime-100 flex items-center justify-center text-lime-600 mb-6 shadow-md">
+          <Award className="w-10 h-10" />
+        </div>
+
+        {/* Heading */}
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          Feedback & E-Certificate
+        </h1>
+
+        <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Thank you for participating in the <span className="font-semibold text-slate-800">Perak Annual Medical Research Conference 2026</span>. Please complete the evaluation form below to claim your digital certificate of attendance.
+        </p>
+
+        {/* Two-Step Cards Grid */}
+        <div className="grid md:grid-cols-2 gap-8 text-left mb-12">
           
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Secure Your Spot</h1>
-          
-          <p className="text-xl text-slate-600 mb-10 leading-relaxed">
-             Registration for the Perak Annual Medical Research Conference 2026 is officially open.
-             <br />
-             <span className="font-bold text-pink-500">Admission is Free</span>, but seats are limited.
-          </p>
+          {/* Step 1: Feedback Form */}
+          <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between hover:border-pink-300 transition-all group">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-pink-100 text-pink-500 flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                1
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-3 flex items-center gap-2">
+                <MessageSquareHeart className="w-6 h-6 text-pink-500" />
+                Submit Feedback
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                Your feedback helps us improve future conferences. Please take a few moments to evaluate the speakers, sessions, and overall organization.
+              </p>
+            </div>
 
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 mb-10 text-left max-w-xl mx-auto shadow-sm">
-             <h3 className="text-lg font-bold text-slate-800 mb-4">What's included:</h3>
-             <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-slate-700">
-                   <CheckCircle className="w-5 h-5 text-lime-500" />
-                   Access to all Keynote and Plenary sessions
-                </li>
-                <li className="flex items-center gap-3 text-slate-700">
-                   <CheckCircle className="w-5 h-5 text-lime-500" />
-                   Morning tea and Lunch
-                </li>
-                <li className="flex items-center gap-3 text-slate-700">
-                   <CheckCircle className="w-5 h-5 text-lime-500" />
-                   e-Certificate
-                </li>
-                <li className="flex items-center gap-3 text-slate-700">
-                   <CheckCircle className="w-5 h-5 text-lime-500" />
-                   Networking opportunities
-                </li>
-             </ul>
+            <a
+              href={FEEDBACK_FORM_LINK}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="w-full py-3.5 px-6 bg-pink-500 text-white rounded-xl font-bold text-center shadow-lg shadow-pink-500/20 hover:bg-pink-600 transition-all flex items-center justify-center gap-2"
+            >
+              Fill Feedback Form <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
 
-          <a 
-             href={REGISTRATION_LINK} 
-             target="_blank" 
-             rel="noreferrer"
-             className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-lime-500 to-green-600 text-white rounded-full font-bold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all transform"
-          >
-             Register via Google Form <ExternalLink className="w-6 h-6" />
-          </a>
+          {/* Step 2: Claim Certificate */}
+          <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between hover:border-lime-300 transition-all group">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-lime-100 text-lime-700 flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-lime-500 group-hover:text-white transition-colors">
+                2
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-3 flex items-center gap-2">
+                <FileText className="w-6 h-6 text-lime-600" />
+                Claim E-Certificate
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                After submitting your feedback, access the HRPB e-Cert portal below to search and download your official E-Certificate.
+              </p>
+            </div>
 
-          <p className="mt-8 text-sm text-slate-400">
-             You will be redirected to an external Google Form to complete your registration.
-          </p>
-       </div>
+            <a
+              href={CERTIFICATE_CLAIM_LINK}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="w-full py-3.5 px-6 bg-slate-900 text-white rounded-xl font-bold text-center shadow-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
+            >
+              Download Certificate <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
 
-       {/* Urgency Badge */}
-       <div className="mt-12 flex items-center gap-2 px-6 py-3 bg-pink-50 text-pink-700 rounded-full border border-pink-100 animate-pulse mb-16">
-          <Users className="w-4 h-4" />
-          <span className="font-semibold text-sm">Limited spots available - First come, first serve!</span>
-       </div>
+        </div>
 
-       {/* Quote */}
-       <div className="max-w-2xl text-center border-t border-slate-100 pt-8">
-           <Quote className="w-6 h-6 text-lime-300 mx-auto mb-3" />
-           <p className="text-slate-600 italic font-serif">
-              "Medicine is a science of uncertainty and an art of probability."
-           </p>
-           <p className="text-xs font-bold text-slate-400 mt-2 uppercase tracking-wide">— Sir William Osler</p>
-       </div>
+        {/* Note / Notice */}
+        <div className="bg-lime-50 border border-lime-200 rounded-2xl p-6 text-slate-700 text-sm flex items-start gap-4 max-w-2xl mx-auto text-left">
+          <CheckCircle2 className="w-6 h-6 text-lime-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-bold text-slate-800 mb-1">Important Notice:</p>
+            <p>E-Certificates are strictly issued to registered participants who submit the evaluation form. For any technical inquiries or name corrections, please contact the CRC Secretariat team.</p>
+          </div>
+        </div>
 
+      </div>
     </div>
   );
 };
