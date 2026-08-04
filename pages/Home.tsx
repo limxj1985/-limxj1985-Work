@@ -21,26 +21,22 @@ const ORGANIZERS = [
   { 
     name: "CRC", 
     logo: logoCRC,
-    // CRC is likely square, so we make it smaller (h-14) to match the others visually
     sizeClass: "h-8 md:h-20" 
   },
   { 
     name: "PGMES", 
     logo: logoPGMES,
-    // PGMES might be wider, so we allow it to be taller (h-16)
     sizeClass: "h-20 md:h-24" 
   },
   { 
     name: "JKN Perak", 
     logo: logoJKN,
-    // Standard size
     sizeClass: "h-20 md:h-24" 
   },
 ];
 
 // --- Sub-Components ---
 
-// Interface for the extracted card component
 interface InfoCardProps {
     Icon: LucideIcon;
     title: string;
@@ -48,7 +44,6 @@ interface InfoCardProps {
     children: ReactNode;
 }
 
-// Extracted reusable InfoCard component
 const InfoCard: React.FC<InfoCardProps> = ({ Icon, title, theme, children }) => {
     const themeStyles = {
         lime: {
@@ -80,7 +75,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ Icon, title, theme, children }) => 
     );
 };
 
-// --- NEW SUB-COMPONENT: Countdown Timer ---
+// --- Countdown Timer Sub-Component ---
 interface TimeLeft {
     days: number;
     hours: number;
@@ -93,12 +88,9 @@ const CountdownTimer = () => {
     const [hasEnded, setHasEnded] = useState(false);
 
     const calculateTimeLeft = () => {
-        // --- IMPORTANT: FIX ---
-        // Changed date format from '2026-9-30' to '2026-09-30' for cross-browser compatibility.
         const targetDate = new Date('2026-09-30T08:00:00'); 
 
         const now = new Date();
-        // Ensure we don't get NaN if date parsing fails
         if (isNaN(targetDate.getTime())) {
              console.error("Invalid Target Date in CountdownTimer");
              return;
@@ -121,16 +113,13 @@ const CountdownTimer = () => {
 
     useEffect(() => {
         calculateTimeLeft(); 
-        const timer = setInterval(calculateTimeLeft, 1000); // Update every second
+        const timer = setInterval(calculateTimeLeft, 1000);
         return () => clearInterval(timer);
     }, []);
 
-    // Small helper for the timer number blocks
     const TimerBlock = ({ value, label }: { value: number, label: string }) => (
          <div className="flex flex-col items-center mx-2 sm:mx-4">
-            {/* Frosted glass style box */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-md rounded-xl border border-lime-400/30 flex items-center justify-center text-2xl sm:text-3xl font-bold text-white shadow-lg mb-2">
-                {/* Pad with leading zero if needed */}
                 {value.toString().padStart(2, '0')}
             </div>
             <div className="text-lime-300 text-xs sm:text-sm uppercase tracking-widest font-bold">{label}</div>
@@ -169,14 +158,12 @@ const Home: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden bg-slate-900">
-        {/* Background Image container */}
         <div className="absolute inset-0">
             <img
               src={heroBg}
               alt="Brain Network Abstract Background"
               className="w-full h-full object-cover opacity-20 mix-blend-screen"
             />
-            {/* Gradients */}
             <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-radial-gradient from-pink-500/30 to-transparent blur-3xl pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[800px] h-[800px] rounded-full bg-radial-gradient from-lime-500/20 to-transparent blur-3xl pointer-events-none"></div>
         </div>
@@ -200,7 +187,6 @@ const Home: React.FC = () => {
             "Connecting Minds: Empowering Clinical Research Through Collaborative Networks"
           </p>
 
-          {/* --- NEW: COUNTDOWN TIMER ADDED HERE --- */}
           <CountdownTimer />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -235,15 +221,27 @@ const Home: React.FC = () => {
             {/* Card 2 */}
             <InfoCard Icon={MapPin} title="Venue" theme="pink">
                  <p className="text-sm max-w-xs mx-auto">
-                  Auditorium, Level 4,<br/>
-                  Ambulatory Care Centre,<br/>
-                  Hospital Raja Permaisuri Bainun,<br/>
-                  Ipoh, Perak
+                 Auditorium, Level 4,<br/>
+                 Ambulatory Care Centre,<br/>
+                 Hospital Raja Permaisuri Bainun,<br/>
+                 Ipoh, Perak
                 </p>
             </InfoCard>
 
-            
-      {/* About Section (with Rotating Images) */}
+            {/* Card 3 - Abstract Submission Removed */}
+            <InfoCard Icon={Clock} title="Important Deadline" theme="lime">
+              <div className="flex flex-col items-center">
+                <span className="font-bold text-lime-600 uppercase text-xs tracking-wider mb-1">
+                  Registration Close
+                </span>
+                <span className="text-sm">21 August 2026</span>
+              </div>
+            </InfoCard>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -335,34 +333,32 @@ const Home: React.FC = () => {
       </section>
 
       {/* Organizers Section */}
-<section className="py-20 bg-white border-t border-slate-100">
-  <div className="max-w-7xl mx-auto px-4 text-center">
-    <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-12">
-      Co-Organised By
-    </p>
-    
-    <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
-      {ORGANIZERS.map((org, index) => (
-        <div 
-          key={index} 
-          className="group relative flex items-center justify-center p-4"
-        >
-          {/* Logo Image - UPDATED CLASSNAME */}
-          <img 
-            src={org.logo} 
-            alt={org.name} 
-            className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
-          />
+      <section className="py-20 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-12">
+            Co-Organised By
+          </p>
           
-          {/* Tooltip */}
-          <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200 pointer-events-none whitespace-nowrap z-20">
-            {org.name}
-          </span>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+            {ORGANIZERS.map((org, index) => (
+              <div 
+                key={index} 
+                className="group relative flex items-center justify-center p-4"
+              >
+                <img 
+                  src={org.logo} 
+                  alt={org.name} 
+                  className="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                />
+                
+                <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200 pointer-events-none whitespace-nowrap z-20">
+                  {org.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
     </div>
   );
 };
