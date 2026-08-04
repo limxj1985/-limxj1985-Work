@@ -4,7 +4,7 @@ import React from 'react';
 export const CONFERENCE_DATE = "Wednesday, 30 September 2026";
 export const CONFERENCE_TIME = "0800 - 1300";
 export const CONFERENCE_VENUE = "Auditorium, Level 4, Ambulatory Care Centre (ACC), Hospital Raja Permaisuri Bainun, Jalan Raja Ashman Shah, 30450 Ipoh, Perak";
-export const REGISTRATION_LINK = "https://your-google-form-or-registration-link-here.com";
+export const REGISTRATION_LINK = " https://hrpb.moh.gov.my/ecert/borang_hadir.php?key=Njc5";
 export const ABSTRACT_TEMPLATE_LINK = "https://docs.google.com/document/d/1X22ZpyxWKCvzyL6RlIoYXSRloC3Sgu0usITxAgYQnH8/edit?tab=t.0";
 export const POSTER_TEMPLATE_LINK = "https://docs.google.com/presentation/d/1Q0QzIa1-CUTlZ_PAwiYNV56-qaORsSk9/edit?usp=sharing&ouid=102140745386971931896&rtpof=true&sd=true";
 export const ABSTRACT_DEADLINE = "12 June 2026";
