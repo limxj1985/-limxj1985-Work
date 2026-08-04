@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Agenda from './pages/Agenda';
 import Speakers from './pages/Speakers';
-import AbstractSubmission from './pages/AbstractSubmission';
 import OralPresentation from './pages/OralPresentation';
 import PosterPresentation from './pages/PosterPresentation';
 import Registration from './pages/Registration';
@@ -30,7 +29,6 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/agenda" element={<Agenda />} />
             <Route path="/speakers" element={<Speakers />} />
-            <Route path="/abstract-submission" element={<AbstractSubmission />} />
             <Route path="/oral-presentation" element={<OralPresentation />} />
             <Route path="/poster-presentation" element={<PosterPresentation />} />
             <Route path="/registration" element={<Registration />} />
