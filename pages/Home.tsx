@@ -209,37 +209,27 @@ const Home: React.FC = () => {
       </section>
 
       {/* Info Cards Section */}
-      <section className="py-16 bg-transparent relative z-10 -mt-20 pointer-events-none">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <InfoCard Icon={Calendar} title="Date & Time" theme="lime">
-                <p>{CONFERENCE_DATE}</p>
-                <p className="text-slate-500 text-sm mt-1">8.00 AM - 1.00 PM</p>
-            </InfoCard>
+<section className="py-16 bg-transparent relative z-10 -mt-20 pointer-events-none">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Card 1 */}
+      <InfoCard Icon={Calendar} title="Date & Time" theme="lime">
+        <p>{CONFERENCE_DATE}</p>
+        <p className="text-slate-500 text-sm mt-1">8.00 AM - 1.00 PM</p>
+      </InfoCard>
 
-            {/* Card 2 */}
-            <InfoCard Icon={MapPin} title="Venue" theme="pink">
-                 <p className="text-sm max-w-xs mx-auto">
-                 Auditorium, Level 4,<br/>
-                 Ambulatory Care Centre,<br/>
-                 Hospital Raja Permaisuri Bainun,<br/>
-                 Ipoh, Perak
-                </p>
-            </InfoCard>
-
-            {/* Card 3 - Abstract Submission Removed */}
-            <InfoCard Icon={Clock} title="Important Deadline" theme="lime">
-              <div className="flex flex-col items-center">
-                <span className="font-bold text-lime-600 uppercase text-xs tracking-wider mb-1">
-                  Registration Close
-                </span>
-                <span className="text-sm">21 August 2026</span>
-              </div>
-            </InfoCard>
-          </div>
-        </div>
-      </section>
+      {/* Card 2 */}
+      <InfoCard Icon={MapPin} title="Venue" theme="pink">
+        <p className="text-sm max-w-xs mx-auto">
+          Auditorium, Level 4,<br/>
+          Ambulatory Care Centre,<br/>
+          Hospital Raja Permaisuri Bainun,<br/>
+          Ipoh, Perak
+        </p>
+      </InfoCard>
+    </div>
+  </div>
+</section>
 
       {/* About Section */}
       <section className="py-24 bg-slate-50">
