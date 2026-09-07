@@ -13,7 +13,7 @@ const posterList: AbstractItem[] = [
   { 
     id: '001', 
     filename: 'V2_001~1.DOC',
-    posterFilename: 'P01.pdf', // Updated poster filename
+    posterFilename: '/posters/abstract_001.pdf', // Updated poster filename
     title: 'Healthcare Worker Burnout as a Determinant of Patient Care Quality: A Systematic Review'
   },
   { 
