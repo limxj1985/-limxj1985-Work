@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 interface AbstractItem {
   id: string;
   filename: string;
+  posterFilename?: string; // 1. ADDED: Declares optional poster filename
   title?: string;
   authors?: string;
   objective?: string;
@@ -13,7 +14,7 @@ const posterList: AbstractItem[] = [
   { 
     id: '001', 
     filename: 'V2_001~1.DOC',
-    posterFilename: '/posters/abstract_001.pdf', // Updated poster filename
+    posterFilename: 'P01.pdf', // Fixed to match your public/abstracts filename
     title: 'Healthcare Worker Burnout as a Determinant of Patient Care Quality: A Systematic Review'
   },
   { 
@@ -196,6 +197,11 @@ export const PosterPresentation: React.FC = () => {
           {filteredAbstracts.length > 0 ? (
             filteredAbstracts.map((abstract) => {
               const filePath = `/abstracts/${encodeURIComponent(abstract.filename)}`;
+              
+              // 2. ADDED: Construct path relative to public/abstracts/
+              const posterPath = abstract.posterFilename
+                ? `/abstracts/${encodeURIComponent(abstract.posterFilename)}`
+                : null;
 
               return (
                 <div
@@ -230,8 +236,25 @@ export const PosterPresentation: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Download / View Button */}
-                  <div className="flex justify-end mt-4">
+                  {/* Action Buttons Section */}
+                  <div className="flex flex-wrap justify-end gap-3 mt-4">
+                    
+                    {/* 3. ADDED: Poster Download / View Button */}
+                    {posterPath && (
+                      <a
+                        href={posterPath}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 border border-[#6B9E00] text-[#6B9E00] hover:bg-green-50 font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors shadow-xs"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 002-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        View Poster
+                      </a>
+                    )}
+
+                    {/* View Abstract Document Button */}
                     <a
                       href={filePath}
                       download
@@ -242,6 +265,7 @@ export const PosterPresentation: React.FC = () => {
                       </svg>
                       View Full Abstract Document
                     </a>
+
                   </div>
                 </div>
               );
