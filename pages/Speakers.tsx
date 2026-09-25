@@ -3,7 +3,7 @@ import { Mic2, User } from 'lucide-react';
 
 // Importing local images from your project structure
 import RukmanPhoto from '../components/assets/69017.jpg';
-import AkhmalPhoto from '../components/assets/69018.jpg';
+import AkhmalPhoto from '../components/assets/Portrait_Dr Akhmal Yusof.jpeg';
 import SarinderPhoto from '../components/assets/Screenshot 2026-06-25 161644.png';
 
 interface Speaker {
