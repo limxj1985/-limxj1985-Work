@@ -20,12 +20,12 @@ const Speakers: React.FC = () => {
       image: RukmanPhoto, 
     },
     {
-      name: "PROF. DATIN DR. SARINDER KAUR DHILLON",
+      name: "PROF. DATIN DR. SARINDER KAUR A/P KASHMIR SINGH",
       role: "Plenary 2 Speaker",
       image: SarinderPhoto, 
     },
     {
-      name: "MS. ASHA THANABALAN",
+      name: "DR. AKHMAL YUSOF",
       role: "Plenary 3 Speaker",
       image: AshaPhoto, 
     },
