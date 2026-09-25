@@ -79,7 +79,7 @@ const Speakers: React.FC = () => {
               </div>
 
               {/* Speaker Details */}
-              <h3 className="text-lg font-bold text-slate-900 text-center whitespace-normal break-words">
+              <h3 className="text-base md:text-lg font-bold text-slate-900 text-center whitespace-normal break-words leading-snug">
                 {speaker.name}
               </h3>
               <p className="text-sm font-semibold text-lime-600 uppercase tracking-wider">
